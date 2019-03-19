@@ -1,0 +1,146 @@
+﻿body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-image: url("../Resources/AsrielGHD.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /*display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 80vh 1fr;
+    grid-template-rows: 1fr 4fr 1fr;*/
+}
+
+.contenedorPrincipal {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    margin: auto;
+    /*margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;*/
+}
+
+.formLogin {
+    width: 40%;
+    height: 26em;
+    font-family: "londrina-shadow","comic sans ms",sans-serif;
+    font-size: 20px;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10%;
+    background-color: rgba(#2339bf,0.75);
+    padding: 30px;
+    margin: auto;
+    margin-top: 1em;
+    text-align: left;
+
+    @media screen and (max-width: 321px) {
+        width: 45%;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 55%;
+    }
+
+    @media screen and (max-width: 992px) {
+        width: 65%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 75%;
+    }
+
+    legend {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: .5em;
+        font-size: 1.5em;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5em;
+        font-size: 1.2em;
+    }
+
+    input {
+        width: 100%;
+        height: 3em;
+        padding: 1em;
+        box-sizing: border-box;
+        margin-top: .5em;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+        font-size: medium;
+
+        &:focus {
+            box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+        }
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5em;
+
+        input {
+            background-color: #2339bf;
+            color: white;
+            border-radius: 10px;
+            padding: 0;
+            box-shadow: 0px 0px 0px 2px #000;
+            margin: 0;
+
+            &:active {
+                box-shadow: 0px 0px 0px 0px #000;
+            }
+
+            &:hover {
+                color: gold;
+                cursor: pointer;
+            }
+        }
+    }
+
+    div.generaRegistro {
+        display: flex;
+        color: #ffffff;
+
+        label.legenda {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+        a.registro {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            margin: auto;
+            color: #ffffff;
+
+            &:hover {
+                color: gold;
+            }
+        }
+    }
+
+    .campoErroneo {
+        display: block;
+        color: #e61c1c;
+    }
+
+    .campoValido {
+        color: #21ca00;
+    }
+}

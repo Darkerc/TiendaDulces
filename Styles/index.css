@@ -1,0 +1,470 @@
+﻿@import url(icomoon/style.css);
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  background-image: url("../Resources/AsrielGHD.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /*display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 80vh 1fr;
+    grid-template-rows: 1fr 4fr 1fr;*/ }
+
+.contenedorPrincipal {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  margin: auto;
+  /*margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;*/ }
+
+.formLogin {
+  width: 40%;
+  height: 26em;
+  font-family: "londrina-shadow","comic sans ms",sans-serif;
+  font-size: 20px;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 10%;
+  background-color: rgba(35, 57, 191, 0.75);
+  padding: 30px;
+  margin: auto;
+  margin-top: 1em;
+  text-align: left; }
+  @media screen and (max-width: 321px) {
+    .formLogin {
+      width: 45%; } }
+  @media screen and (max-width: 768px) {
+    .formLogin {
+      width: 55%; } }
+  @media screen and (max-width: 992px) {
+    .formLogin {
+      width: 65%; } }
+  @media screen and (max-width: 1200px) {
+    .formLogin {
+      width: 75%; } }
+  .formLogin legend {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: .5em;
+    font-size: 1.5em; }
+  .formLogin span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 1.2em; }
+  .formLogin input {
+    width: 100%;
+    height: 3em;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-top: .5em;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+    font-size: medium; }
+    .formLogin input:focus {
+      box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1; }
+  .formLogin div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em; }
+    .formLogin div input {
+      background-color: #2339bf;
+      color: white;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: 0px 0px 0px 2px #000;
+      margin: 0; }
+      .formLogin div input:active {
+        box-shadow: 0px 0px 0px 0px #000; }
+      .formLogin div input:hover {
+        color: gold;
+        cursor: pointer; }
+  .formLogin div.generaRegistro {
+    display: flex;
+    color: #ffffff; }
+    .formLogin div.generaRegistro label.legenda {
+      display: block;
+      margin: auto;
+      text-align: center; }
+    .formLogin div.generaRegistro a.registro {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      margin: auto;
+      color: #ffffff; }
+      .formLogin div.generaRegistro a.registro:hover {
+        color: gold; }
+  .formLogin .campoErroneo {
+    display: block;
+    color: #e61c1c; }
+  .formLogin .campoValido {
+    color: #21ca00; }
+
+.navegacionPrincipal {
+  background-color: rgba(35, 57, 191, 0.75);
+  font-size: 25px; }
+  .navegacionPrincipal ul {
+    display: flex;
+    margin: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    height: 100%; }
+    @media screen and (max-width: 768px) {
+      .navegacionPrincipal ul {
+        display: none; } }
+    .navegacionPrincipal ul li {
+      list-style: none;
+      margin: auto; }
+      .navegacionPrincipal ul li a {
+        transition: all ease-in-out 300ms;
+        color: white;
+        text-decoration: none;
+        padding: .25em;
+        border-radius: 10px;
+        border: 3px solid rgba(255, 250, 0, 0.8);
+        background-color: #2339bf;
+        transition: all 100ms ease-in-out; }
+        .navegacionPrincipal ul li a:active {
+          transform: scale(0.85); }
+        .navegacionPrincipal ul li a:hover {
+          background-color: #2f2727; }
+      .navegacionPrincipal ul li a:hover {
+        color: gold; }
+
+.tbContenedor {
+  margin: auto;
+  overflow-x: auto;
+  width: 95%; }
+  .tbContenedor .tbResponsive {
+    min-width: 1000px;
+    overflow: auto;
+    border-collapse: collapse !important;
+    margin: auto;
+    background: rgba(60, 51, 51, 0.5) !important;
+    color: white;
+    font-size: 20px;
+    border: solid 2px #2f2828;
+    box-sizing: border-box; }
+    .tbContenedor .tbResponsive thead {
+      padding: 0; }
+      .tbContenedor .tbResponsive thead th:first-child {
+        width: 8em; }
+      .tbContenedor .tbResponsive thead tr {
+        display: table-row;
+        background-color: #3c3333;
+        border: 3px solid #3c3333; }
+      .tbContenedor .tbResponsive thead td {
+        border: 3px solid #3c3333;
+        text-align: center; }
+    .tbContenedor .tbResponsive tbody {
+      padding: 0; }
+      .tbContenedor .tbResponsive tbody tr {
+        background-color: #635252; }
+        .tbContenedor .tbResponsive tbody tr td:first-child {
+          position: absolute;
+          background-color: #635252;
+          width: 8em; }
+        .tbContenedor .tbResponsive tbody tr td {
+          border: 3px solid #3c3333;
+          text-align: center; }
+    .tbContenedor .tbResponsive tr:hover td:first-child {
+      background-color: #223e8b;
+      color: white; }
+
+.contenedorProductos {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-template-rows: 200px;
+  grid-auto-rows: 200px;
+  grid-gap: 15px;
+  justify-content: center;
+  margin: 1.5em auto; }
+  .contenedorProductos a {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10%;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    display: block; }
+    .contenedorProductos a:before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(47, 39, 39, 0.8);
+      transition: all 300ms ease-in-out; }
+    .contenedorProductos a:hover {
+      box-shadow: 0.3em 0.3em 10px 0 #edff00, -0.3em -0.3em 25px 0 #edff00, 0.3em -0.3em 25px 0 #edff00, -0.3em 0.3em 25px 0 #edff00;
+      z-index: 2;
+      transform: scale(1.2); }
+      .contenedorProductos a:hover:before {
+        height: 100%; }
+      .contenedorProductos a:hover legend {
+        z-index: -1; }
+      .contenedorProductos a:hover label {
+        z-index: -1;
+        display: none; }
+      .contenedorProductos a:hover span {
+        transform: translateY(0);
+        z-index: 2; }
+    .contenedorProductos a legend {
+      text-align: center;
+      /*background: linear-gradient(#ffe200,#00b1ff,#ffe200);
+            color: transparent;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;*/
+      color: white;
+      padding: 5px;
+      border-radius: 25px;
+      background-color: rgba(35, 57, 191, 0.65);
+      position: absolute;
+      margin: 10%;
+      width: 75%; }
+    .contenedorProductos a label {
+      text-align: center;
+      /*background: linear-gradient(#ffe200,#00b1ff,#ffe200);
+            color: transparent;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;*/
+      border-radius: 25px;
+      color: white;
+      background-color: rgba(35, 57, 191, 0.65);
+      display: block;
+      margin: 60% auto 50% auto;
+      width: 50%; }
+    .contenedorProductos a span {
+      text-align: center;
+      background: linear-gradient(#ffe200, #00b1ff, #ffe200);
+      color: transparent;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -o-background-clip: text;
+      position: absolute;
+      width: 100%;
+      margin: 25% 0;
+      transform: translateY(200px);
+      transition: all 200ms ease-in-out; }
+    .contenedorProductos a img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.registroUsuarios {
+  width: 75%;
+  margin: auto auto auto auto;
+  height: 75%;
+  text-align: left;
+  padding: .5em;
+  background-color: rgba(35, 57, 191, 0.75);
+  color: white;
+  border-radius: 20px; }
+  .registroUsuarios legend {
+    font-size: 40px; }
+  .registroUsuarios input {
+    width: 100%;
+    height: 1.5em;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-top: .5em;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+    font-size: medium;
+    display: block; }
+    .registroUsuarios input:focus {
+      box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1; }
+  .registroUsuarios label {
+    display: block;
+    width: 100%;
+    margin-top: 1.5em;
+    font-size: 1.2em; }
+  .registroUsuarios div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em; }
+    .registroUsuarios div input {
+      background-color: #2339bf;
+      height: 2em;
+      color: white;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: 0px 0px 0px 2px #000;
+      width: 50%; }
+      .registroUsuarios div input:active {
+        box-shadow: 0px 0px 0px 0px #000; }
+      .registroUsuarios div input:hover {
+        color: gold;
+        cursor: pointer; }
+  .registroUsuarios .campoErroneo {
+    margin-top: 0;
+    display: block;
+    color: #e61c1c; }
+  .registroUsuarios .campoValido {
+    color: #21ca00; }
+
+.productoPedido {
+  display: flex;
+  margin: 50px auto 50px auto;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 85%;
+  padding: 60px 20px;
+  border-radius: 50px; }
+  .productoPedido img {
+    display: block;
+    width: 45%;
+    height: 350px;
+    margin: 0 2.5%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-sizing: border-box;
+    border: solid 5px black;
+    transition: all 200ms ease-in-out; }
+    .productoPedido img:hover {
+      transform: scale(1.05); }
+  .productoPedido div, .productoPedido form {
+    width: 45%;
+    margin: 0 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .productoPedido div label, .productoPedido form label {
+      display: block;
+      text-align: center;
+      margin: auto;
+      background: linear-gradient(#ffe200, #00b1ff, #ffe200);
+      color: transparent;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -o-background-clip: text; }
+    .productoPedido div span, .productoPedido form span {
+      display: block;
+      margin: auto auto auto 0;
+      background: linear-gradient(#00b1ff, #ffe200, #00b1ff);
+      color: transparent;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -o-background-clip: text; }
+    .productoPedido div input, .productoPedido form input {
+      display: block;
+      width: 100%;
+      height: 35px;
+      background-color: #2339bf;
+      color: white;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: 0px 0px 0px 2px #000;
+      margin: 0;
+      font-size: 25px;
+      text-align: center; }
+      .productoPedido div input:active, .productoPedido form input:active {
+        box-shadow: 0px 0px 0px 0px #000; }
+      .productoPedido div input:hover, .productoPedido form input:hover {
+        color: gold;
+        cursor: pointer; }
+    .productoPedido div div, .productoPedido form div {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: auto 0 auto 0; }
+      .productoPedido div div button, .productoPedido form div button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #2339bf;
+        color: white;
+        border-radius: 10px;
+        padding: 0;
+        box-shadow: 0px 0px 0px 2px #000;
+        margin: 0;
+        font-size: 30px; }
+        .productoPedido div div button:active, .productoPedido form div button:active {
+          box-shadow: 0px 0px 0px 0px #000; }
+        .productoPedido div div button:hover, .productoPedido form div button:hover {
+          color: gold;
+          cursor: pointer; }
+      .productoPedido div div label, .productoPedido form div label {
+        margin: 0;
+        display: block;
+        text-align: left; }
+      .productoPedido div div input, .productoPedido form div input {
+        display: block;
+        width: 50px;
+        margin: auto 0;
+        height: 30px;
+        padding: .3em;
+        color: black;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-size: medium;
+        font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif; }
+        .productoPedido div div input:focus, .productoPedido form div input:focus {
+          cursor: text;
+          box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1; }
+        .productoPedido div div input:hover, .productoPedido form div input:hover {
+          cursor: text;
+          color: black; }
+
+.footer {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0; }
+  .footer ul {
+    width: 85%;
+    background-color: rgba(35, 57, 191, 0.75);
+    display: flex;
+    margin: 0 auto;
+    padding: 0; }
+    .footer ul li {
+      list-style: none;
+      margin: 0 auto;
+      color: white;
+      text-align: center; }
+      .footer ul li a {
+        font-size: 1em;
+        display: block;
+        text-decoration: none; }
+      .footer ul li .icon-google {
+        color: #d95232; }
+      .footer ul li .icon-facebook2 {
+        color: #3b5998; }
+      .footer ul li .icon-twitter {
+        color: #00abf0; }
+      .footer ul li label {
+        display: block; }
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(#1f48ce, #0528f8, #1f48ce);
+  margin-right: 2px;
+  margin-left: 2px; }
+
+::-webkit-scrollbar-track {
+  background-color: #f8fbb8;
+  border: 2px solid #808080; }
+  ::-webkit-scrollbar-track:hover {
+    background-color: #e2e5a7; }

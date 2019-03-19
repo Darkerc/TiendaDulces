@@ -1,0 +1,2 @@
+Arregla lo del archivo php de ConexionClase.php
+en la parte de actualizar e insertr ya que no deja poner imagenes

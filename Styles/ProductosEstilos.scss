@@ -1,0 +1,62 @@
+﻿.tbContenedor {
+    margin: auto;
+    overflow-x: auto;
+    width: 95%;
+
+    .tbResponsive {
+        min-width: 1000px;
+        overflow: auto;
+        border-collapse: collapse !important;
+        margin: auto;
+        background: rgba(#3c3333,0.5) !important;
+        color: white;
+        font-size: 20px;
+        border: solid 2px #2f2828;
+        box-sizing: border-box;
+
+        thead {
+            padding: 0;
+
+            th:first-child {
+                width: 8em;
+            }
+
+            tr {
+                display: table-row;
+                background-color: #3c3333;
+                border: 3px solid #3c3333;
+            }
+
+            td {
+                border: 3px solid #3c3333;
+                text-align: center;
+            }
+        }
+
+        tbody {
+            padding: 0;
+
+            tr {
+                background-color: #635252;
+
+                td:first-child {
+                    position: absolute;
+                    background-color: #635252;
+                    width: 8em;
+                }
+
+                td {
+                    border: 3px solid #3c3333;
+                    text-align: center;
+                }
+            }
+        }
+
+        tr:hover {
+            td:first-child {
+                background-color: #223e8b;
+                color: white;
+            }
+        }
+    }
+}
