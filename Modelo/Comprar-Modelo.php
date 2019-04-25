@@ -14,11 +14,17 @@
 		}
 		
 		public function usuariosTienda(){
-			return $this->conexionBBDD->datosTodos("productos",PDO::FETCH_ASSOC,true);
+	
+			return $this->conexionBBDD->datosTodosSCP("Select * From PRODUCTOS WHERE TiendaDueña != " . $_SESSION['TIENDA'] ,PDO::FETCH_ASSOC,true);
+			
 		}
 		
 		public function cerrarConexion(){
 			$this->conexionBBDD->cierraConexion();
+		}
+		
+		public function sentenciasSQL(){
+			return $this->conexionBBDD->sentenciasSQL;
 		}
 	}
 

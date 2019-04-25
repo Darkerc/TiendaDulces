@@ -5,22 +5,9 @@
     <title>Registro</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="../Resources/png/017-sensible.png" rel="shortcut icon" type="image/x-icon" />
-    <link type="text/css" rel="stylesheet" href="../Styles/index.min.css" />
+    <link type="text/css" rel="stylesheet" href="../Styles/index.css" />
 </head>
 <body>
-	<nav class="navegacionPrincipal">
-      <ul>
-        <li>
-          <a href="../Controlador/Comprar-Controlador.php">Comprar</a>
-        </li>
-        <li>
-          <a href="../Controlador/Productos-Controlador.php">Productos</a>
-        </li>
-        <li>
-          <a href="../Modelo/CerrarSession.php">Cerrar Session</a>
-        </li>
-      </ul>
-    </nav>
 
 	<div class="contenedorPrincipal">
 		<form class="registroUsuarios" method="post" id="formRegistro" name="formRegistro" action="../Controlador/Index-Controlador.php">
@@ -52,6 +39,22 @@
 		</form>
 	</div>
 
+	 <div class="tgSQLNone" id="mostrarSql">
+      <div>
+        <label>Sentencias SQL</label>
+        <ul>
+      	 	<li>
+						 INSERT INTO TIENDA VALUES (null,NombreTienda,Pais,Estado,Colonia,Contraseña,Encargado)
+					 </li>
+        </ul>
+      </div>
+  	</div>
+
+    <div class="sentenciaSql" id="btnSql">
+      <span>SQL</span>
+    </div>
+	
+
 	<footer class="footer">
 		<ul>
 			<li><a href="#" class="icon-google"></a><label>Google</label></li>
@@ -63,5 +66,6 @@
 	<script src="../Scripts/jquery-3.3.1.js"></script>
 	<script src="../Scripts/jquery.validate.js"></script>
 	<script src="../Scripts/Registro-script.js"></script>
+    <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
 </body>
 </html>

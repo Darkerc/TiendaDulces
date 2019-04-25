@@ -1,0 +1,69 @@
+.navegacionPrincipal {
+  background-color: rgba(35, 57, 191, 0.75);
+  font-size: 25px;
+}
+
+.navegacionPrincipal ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .navegacionPrincipal ul {
+    display: none;
+  }
+}
+
+.navegacionPrincipal ul li {
+  list-style: none;
+  margin: auto;
+}
+
+.navegacionPrincipal ul li a, .navegacionPrincipal ul li label {
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+  color: white;
+  text-decoration: none;
+  padding: .25em;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 250, 0, 0.8);
+  background-color: #2339bf;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.navegacionPrincipal ul li a:active, .navegacionPrincipal ul li label:active {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
+.navegacionPrincipal ul li a:hover, .navegacionPrincipal ul li label:hover {
+  background-color: #2f2727;
+}
+
+.navegacionPrincipal ul li label.SQL:focus {
+  background-color: red;
+}
+
+.navegacionPrincipal ul li label.SQL:focus div.tgSQL {
+  display: block;
+}
+
+.navegacionPrincipal ul li label.SQL:hover {
+  background-color: red;
+}
+
+.navegacionPrincipal ul li label.SQL:hover div.tgSQL {
+  display: block;
+}
+
+.navegacionPrincipal ul li a:hover {
+  color: gold;
+}
+/*# sourceMappingURL=NavPrincipal.css.map */

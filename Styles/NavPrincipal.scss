@@ -2,7 +2,7 @@
     background-color: rgba(#2339bf,0.75);
     font-size: 25px;
 
-    ul {
+    ul { 
         display: flex;
         margin: 0;
         padding-top: .5em;
@@ -17,7 +17,7 @@
             list-style: none;
             margin: auto;
 
-            a {
+            a, label {
                 transition: all ease-in-out 300ms;
                 color: white;
                 text-decoration: none;
@@ -26,6 +26,7 @@
                 border: 3px solid rgba(#fffa00,.80);
                 background-color: #2339bf;
                 transition: all 100ms ease-in-out;
+                cursor: pointer;
 
                 &:active {
                     transform: scale(.85);
@@ -33,6 +34,22 @@
 
                 &:hover {
                     background-color: #2f2727;
+                }
+            }
+
+            label.SQL:focus {
+                background-color: red;
+
+                div.tgSQL {
+                    display: block;
+                }
+            }
+
+            label.SQL:hover {
+                background-color: red;
+
+                div.tgSQL {
+                    display: block;
                 }
             }
 

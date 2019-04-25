@@ -17,7 +17,7 @@
     <title>Tienda Online</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Resources/png/017-sensible.png" rel="shortcut icon" type="image/x-icon" />
-    <link type="text/css" rel="stylesheet" href="Styles/index.min.css" />
+    <link type="text/css" rel="stylesheet" href="Styles/index.css" />
 </head>
 <body>
 
@@ -40,6 +40,19 @@
     </form>
 	</div>
 
+	<div class="tgSQLNone" id="mostrarSql">
+      <div>
+        <label>Sentencias SQL</label>
+        <ul>
+      	 	<li>Select * from tienda where id = ?</li>
+        </ul>
+      </div>
+  	</div>
+
+    <div class="sentenciaSql" id="btnSql">
+      <span>SQL</span>
+    </div>
+
 	<footer class="footer">
 		<ul>
 			<li><a href="#" class="icon-google"></a><label>Google</label></li>
@@ -51,5 +64,6 @@
 	<script src="Scripts/jquery-3.3.1.js"></script>
 	<script src="Scripts/jquery.validate.js"></script>
 	<script src="Scripts/ValidacionIndex.js"></script>
+	<script src="Scripts/JSGeneral.js"></script>
 </body>
 </html>

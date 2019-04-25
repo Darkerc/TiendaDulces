@@ -1,0 +1,45 @@
+.footer {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.footer ul {
+  width: 85%;
+  background-color: rgba(35, 57, 191, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.footer ul li {
+  list-style: none;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.footer ul li a {
+  font-size: 1em;
+  display: block;
+  text-decoration: none;
+}
+
+.footer ul li .icon-google {
+  color: #d95232;
+}
+
+.footer ul li .icon-facebook2 {
+  color: #3b5998;
+}
+
+.footer ul li .icon-twitter {
+  color: #00abf0;
+}
+
+.footer ul li label {
+  display: block;
+}
+/*# sourceMappingURL=Footer.css.map */

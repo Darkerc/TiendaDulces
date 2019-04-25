@@ -15,6 +15,8 @@
 
 	$productos=$datosProductos->usuariosTienda();
 
+	$SQL=$datosProductos->sentenciasSQL();
+
 	$datosProductos->cerrarConexion();
 	
 	include("../Vista/Productos-Vista.php");

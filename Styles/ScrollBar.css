@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+  background-color: white;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1f48ce), color-stop(#0528f8), to(#1f48ce));
+  background: linear-gradient(#1f48ce, #0528f8, #1f48ce);
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f8fbb8;
+  border: 2px solid #808080;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #e2e5a7;
+}
+/*# sourceMappingURL=ScrollBar.css.map */

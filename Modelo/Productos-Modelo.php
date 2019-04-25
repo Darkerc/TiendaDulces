@@ -20,6 +20,10 @@
 		public function cerrarConexion(){
 			$this->conexionBBDD->cierraConexion();
 		}
+		
+		public function sentenciasSQL(){
+			return $this->conexionBBDD->sentenciasSQL;
+		}
 			
 	}
 	

@@ -19,6 +19,11 @@
 			
 		}
 		
+		
+		public function sentenciasSQL(){
+			return $this->conexionBBDD->sentenciasSQL;
+		}
+		
 		public function cerrarConexion(){
 			$this->conexionBBDD->cierraConexion();
 		}

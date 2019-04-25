@@ -1,0 +1,62 @@
+.tbContenedor {
+  margin: auto;
+  overflow-x: auto;
+  width: 95%;
+}
+
+.tbContenedor .tbResponsive {
+  min-width: 1000px;
+  overflow: auto;
+  border-collapse: collapse !important;
+  margin: auto;
+  background: rgba(60, 51, 51, 0.5) !important;
+  color: white;
+  font-size: 20px;
+  border: solid 2px #2f2828;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.tbContenedor .tbResponsive thead {
+  padding: 0;
+}
+
+.tbContenedor .tbResponsive thead th:first-child {
+  width: 8em;
+}
+
+.tbContenedor .tbResponsive thead tr {
+  display: table-row;
+  background-color: #3c3333;
+  border: 3px solid #3c3333;
+}
+
+.tbContenedor .tbResponsive thead td {
+  border: 3px solid #3c3333;
+  text-align: center;
+}
+
+.tbContenedor .tbResponsive tbody {
+  padding: 0;
+}
+
+.tbContenedor .tbResponsive tbody tr {
+  background-color: #635252;
+}
+
+.tbContenedor .tbResponsive tbody tr td:first-child {
+  position: absolute;
+  background-color: #635252;
+  width: 8em;
+}
+
+.tbContenedor .tbResponsive tbody tr td {
+  border: 3px solid #3c3333;
+  text-align: center;
+}
+
+.tbContenedor .tbResponsive tr:hover td:first-child {
+  background-color: #223e8b;
+  color: white;
+}
+/*# sourceMappingURL=ProductosEstilos.css.map */

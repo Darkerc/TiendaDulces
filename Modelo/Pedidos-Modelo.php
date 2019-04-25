@@ -18,6 +18,10 @@
 			return $this->conexionBBDD->datosSeleccionados("productos",array("CodigoProducto"=>$id),PDO::FETCH_ASSOC,false);
 		}
 		
+		public function sentenciasSQL(){
+			return $this->conexionBBDD->sentenciasSQL;
+		}
+		
 		
 	}
 

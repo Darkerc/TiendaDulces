@@ -3,21 +3,26 @@
   <head>
     <title>Productos</title>
     <link href="../Resources/png/017-sensible.png" rel="shortcut icon" type="image/x-icon" />
-    <link type="text/css" rel="stylesheet" href="../Styles/index.min.css" />
+    <link type="text/css" rel="stylesheet" href="../Styles/index.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
     <nav class="navegacionPrincipal">
       <ul>
+
         <li>
           <a href="../Controlador/Comprar-Controlador.php">Comprar</a>
         </li>
         <li>
           <a href="../Controlador/Productos-Controlador.php">Productos</a>
         </li>
+		<li>
+          <a href="../Controlador/CreaProducto-Controlador.php">Crear Producto</a>
+        </li>
         <li>
           <a href="../Modelo/CerrarSession.php">Cerrar Session</a>
         </li>
+		
       </ul>
     </nav>
 
@@ -40,6 +45,21 @@
       </div>
     </div>
 
+    <div class="tgSQLNone" id="mostrarSql">
+      <div>
+        <label>Sentencias SQL</label>
+        <ul>
+      	 	<?php  foreach($SQL as $sentencias){
+      			echo "<li>" . $sentencias . "</li>";
+      		} ?>
+        </ul>
+      </div>
+  	</div>
+
+    <div class="sentenciaSql" id="btnSql">
+      <span>SQL</span>
+    </div>
+
     <footer class="footer">
       <ul>
         <li>
@@ -56,5 +76,9 @@
         </li>
       </ul>
     </footer>
+
+    <script type="text/javascript" src="../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
+
   </body>
 </html>

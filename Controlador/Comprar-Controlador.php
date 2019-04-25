@@ -10,6 +10,8 @@
 
 	$datosProductos->cerrarConexion();
 
+	$SQL=$datosProductos->sentenciasSQL();
+
 	require("../Vista/Comprar-Vista.php");
 
 ?>

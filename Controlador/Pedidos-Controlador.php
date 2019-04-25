@@ -20,6 +20,8 @@
 
 	$datosProducto=$datosProductoPedido->datosProducto($idProducto);
 
+	$SQL=$datosProductoPedido->sentenciasSQL();
+
 	require("../Vista/Pedidos-Vista.php");
 
 ?>

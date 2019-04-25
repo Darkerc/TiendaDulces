@@ -13,9 +13,14 @@
 		//Devuelve el numero de filas del la consulta actual
 		public $numFilas;
 		
+		//Devuelve las sentencias SQL que se an realizado
+		public $sentenciasSQL;
+		
 		//Conexion a la BBDD
 		public function ConexionBBDD($DireccionBBDD,$nombreBBDD,$usuario,$contraseña){
 
+			$this->sentenciasSQL=null ? "" : [];
+			
 			try{
 
 			$this->conexion=new PDO("mysql:host=$DireccionBBDD; dbname=$nombreBBDD","$usuario","$contraseña");
@@ -61,6 +66,8 @@
 			try{
 
 			$sentenciaSQL="SELECT * FROM $tabla";
+				
+			$this->sentenciasSQL[]=$sentenciaSQL;
 
 			$resultado=$this->conexion->prepare($sentenciaSQL);
 
@@ -98,6 +105,8 @@
 
 			try{
 
+			$this->sentenciasSQL[]=$sql;
+				
 			//Prepara la sentencia sql
 			$resultado=$this->conexion->prepare($sql);
 
@@ -133,36 +142,36 @@
 		public function insertaDatos($tabla,$arrayPropiedades){
 
 			//Parte de la sentecia sql
-			$elString="(";
+			$criteriosSQL="(";
 
 			$contador=0;
 
 			//obteniendo los campos donde se insertaran los dtos
 			foreach ($arrayPropiedades as $Clave => $Valor) {
 
-				$elString=$elString . $Clave;
+				$criteriosSQL=$criteriosSQL . $Clave;
 
 				if($contador!=count($arrayPropiedades)-1){
 
-					$elString=$elString . ",";
+					$criteriosSQL=$criteriosSQL . ",";
 
 				}
 
 				$contador++;
 			}
 
-			$elString=$elString . ") values (";
+			$criteriosSQL=$criteriosSQL . ") values (";
 
 			$contador=0;
 
 			//Añadiendo los interrogantes ? para poder realizar la consulta preparada
 			for ($i=0; $i < count($arrayPropiedades) ; $i++) { 
 
-				$elString=$elString . "?";
+				$criteriosSQL=$criteriosSQL . "?";
 
 				if($contador!=count($arrayPropiedades)-1){
 
-					$elString=$elString . ",";
+					$criteriosSQL=$criteriosSQL . ",";
 
 				}
 
@@ -170,9 +179,9 @@
 			
 			}
 
-			$elString=$elString . ");";
+			$criteriosSQL=$criteriosSQL . ");";
 
-			echo $elString;
+			echo $criteriosSQL;
 
 			$datosConsulta;
 
@@ -184,7 +193,9 @@
 			try{
 
 			//sentencia insert terminada
-			$senteciaSQL="INSERT INTO $tabla $elString";
+			$senteciaSQL="INSERT INTO $tabla $criteriosSQL";
+				
+			$this->sentenciasSQL[]=$senteciaSQL;
 
 			$resultado=$this->conexion->prepare($senteciaSQL);
 
@@ -231,6 +242,8 @@
 	
 			//Realizanfo la consulta
 			try{
+				
+			$this->sentenciasSQL[]=$sentenciaSQL;
 			
 			$resultado=$this->conexion->prepare($sentenciaSQL);
 			
@@ -314,6 +327,8 @@
 			}
 			
 			try{
+				
+			$this->sentenciasSQL[]=$sentenciaSQL;
 			
 			$resultado=$this->conexion->prepare($sentenciaSQL);
 			
@@ -356,6 +371,8 @@
 			echo $sentenciaSQL;
 			
 			try{
+				
+			$this->sentenciasSQL[]=$sentenciaSQL;
 			
 			$resultado=$this->conexion->prepare($sentenciaSQL);
 			
