@@ -1,0 +1,211 @@
+.creaProducto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 65%;
+  margin: 1em auto 1em auto;
+  font-size: 30px;
+  background-color: rgba(35, 57, 191, 0.75);
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.creaProducto label {
+  width: 100%;
+  display: block;
+  height: 1.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+  font-size: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00b1ff), color-stop(#ffe200), to(#00b1ff));
+  background: linear-gradient(#00b1ff, #ffe200, #00b1ff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.creaProducto div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.creaProducto div label.input {
+  width: 35%;
+  margin: 0 auto 0 0;
+  font-size: 25px;
+}
+
+.creaProducto div label.nombre {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 25px;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.creaProducto input.input {
+  width: 100%;
+  height: 2em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+  font-size: medium;
+  margin: 1.5em auto .5em auto;
+}
+
+.creaProducto input.input:focus {
+  -webkit-box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+          box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+}
+
+.creaProducto .submit {
+  background-color: #2339bf;
+  color: white;
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  width: 40%;
+  font-size: 20px;
+  margin: 1.5em auto 1.5em auto;
+  font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.creaProducto .submit:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.creaProducto .submit:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.creaProducto .contImagen {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5em 0 .5em 0;
+}
+
+.creaProducto .contImagen div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: auto;
+}
+
+.creaProducto .contImagen div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 85%;
+  height: 30%;
+  margin: auto;
+  cursor: pointer;
+  z-index: 5;
+  position: relative;
+  background-color: #2339bf;
+  color: white;
+  border: 2px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 0px 3px #000;
+          box-shadow: 0px 0px 0px 3px #000;
+  font-size: 20px;
+  font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.creaProducto .contImagen div div:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.creaProducto .contImagen div div:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.creaProducto .contImagen div div .input-file {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 100;
+  opacity: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.creaProducto .contImagen div div span {
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.creaProducto .contImagen div div label.campoNoValido {
+  color: #db0c0c;
+  position: absolute;
+  width: 150%;
+  top: 105%;
+  left: -25%;
+  text-align: center;
+  font-size: 25px;
+}
+
+.creaProducto .contImagen div div .campoValido {
+  color: #26aa00;
+}
+
+.creaProducto .contImagen img {
+  border: solid 5px black;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 55%;
+  height: 12em;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.creaProducto .campoNoValido {
+  margin: 0 auto 1em auto;
+  color: #db0c0c;
+}
+
+.creaProducto .campoValido {
+  color: #26aa00;
+}
+/*# sourceMappingURL=CreaProductoEstilos.css.map */

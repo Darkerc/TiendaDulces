@@ -1,0 +1,154 @@
+﻿.productoPedido {
+    display: flex;
+    margin: 50px auto 0 auto;
+    background-color: rgba(#2339bf,0.75);
+    width: 85%;
+    padding: 60px 20px;
+    border-radius: 50px;
+
+    img {
+        display: block;
+        width: 45%;
+        height: 350px;
+        margin: 0 2.5%;
+        border-radius: 20px;
+        object-fit: cover;
+        box-sizing: border-box;
+        border: solid 5px black;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    div, form {
+        width: 45%;
+        margin: 0 2.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+
+        label {
+            display: block;
+            text-align: center;
+            margin: auto;
+            background: linear-gradient(#ffe200,#00b1ff,#ffe200);
+            color: transparent;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+        }
+
+        span {
+            display: block;
+            margin: auto auto auto 0;
+            background: linear-gradient(#00b1ff,#ffe200,#00b1ff);
+            color: transparent;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            height: 35px;
+            background-color: #2339bf;
+            color: white;
+            border-radius: 10px;
+            padding: 0;
+            box-shadow: 0px 0px 0px 2px #000;
+            margin: 0;
+            font-size: 25px;
+            text-align: center;
+
+            &:active {
+                box-shadow: 0px 0px 0px 0px #000;
+            }
+
+            &:hover {
+                color: gold;
+                cursor: pointer;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: auto 0 auto 0;
+
+            button {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #2339bf;
+                color: white;
+                border-radius: 10px;
+                padding: 0;
+                box-shadow: 0px 0px 0px 2px #000;
+                margin: 0;
+                font-size: 30px;
+
+                &:active {
+                    box-shadow: 0px 0px 0px 0px #000;
+                }
+
+                &:hover {
+                    color: gold;
+                    cursor: pointer;
+                }
+            }
+
+            label {
+                margin: 0;
+                display: block;
+                text-align: left;
+            }
+
+            input {
+                display: block;
+                width: 50px;
+                margin: auto 0;
+                height: 30px;
+                padding: .3em;
+                color: black;
+                background-color: white;
+                box-sizing: border-box;
+                border-radius: 5px;
+                font-size: medium;
+                font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+
+                &:focus {
+                    cursor: text;
+                    box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+                }
+
+                &:hover {
+                    cursor: text;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+label.noAdmitido,label.admitido{
+    text-align: center;
+    display: block;
+    background-color: rgba(#2339bf,0.75);
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+label.noAdmitido{
+    color: #f11717;
+}
+
+label.admitido{
+    color: #17dd42;
+}

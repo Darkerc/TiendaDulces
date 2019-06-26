@@ -1,0 +1,83 @@
+.registroUsuarios {
+  width: 75%;
+  margin: auto auto auto auto;
+  height: 75%;
+  text-align: left;
+  padding: .5em;
+  background-color: rgba(35, 57, 191, 0.75);
+  color: white;
+  border-radius: 20px;
+}
+
+.registroUsuarios legend {
+  font-size: 40px;
+}
+
+.registroUsuarios input {
+  width: 100%;
+  height: 1.5em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: .5em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+  font-size: medium;
+  display: block;
+}
+
+.registroUsuarios input:focus {
+  -webkit-box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+          box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+}
+
+.registroUsuarios label {
+  display: block;
+  width: 100%;
+  margin-top: 1.5em;
+  font-size: 1.2em;
+}
+
+.registroUsuarios div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.registroUsuarios div input {
+  background-color: #2339bf;
+  height: 2em;
+  color: white;
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  width: 50%;
+}
+
+.registroUsuarios div input:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.registroUsuarios div input:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.registroUsuarios .campoErroneo {
+  margin-top: 0;
+  display: block;
+  color: #e61c1c;
+}
+
+.registroUsuarios .campoValido {
+  color: #21ca00;
+}
+/*# sourceMappingURL=RegistroEstilos.css.map */

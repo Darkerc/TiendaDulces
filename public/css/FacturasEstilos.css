@@ -1,0 +1,170 @@
+.avisoFactura {
+  padding: 1em;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 80%;
+  margin: .5em auto;
+  border-radius: 20px;
+}
+
+.avisoFactura label {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4cff00), color-stop(#ffd800), to(#4cff00));
+  background: linear-gradient(#4cff00, #ffd800, #4cff00);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.avisoFactura a {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2339bf), color-stop(#00ffff), to(#00ffff));
+  background: linear-gradient(#2339bf, #00ffff, #00ffff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  cursor: pointer;
+}
+
+.avisoFactura a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffd800), color-stop(#4cff00), to(#ffd800));
+  background: linear-gradient(#ffd800, #4cff00, #ffd800);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.contenedorFactura {
+  min-height: 100vh !important;
+}
+
+.ajusteImagen {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+}
+
+.titularPDF {
+  padding: .5em 0;
+  margin: 0;
+  text-align: center;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #88f8f8;
+  color: #007777;
+  font-weight: 100 !important;
+  font-size: 45px;
+}
+
+.contenedorPDF {
+  margin: 0 10%;
+  font-family: 'comic sans ms','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedorPDF .contenedorCuerpo {
+  margin: 10px 0;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto {
+  width: 55%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  border: #2339bf solid 1px;
+  float: left;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .imagenNombre, .contenedorPDF .contenedorCuerpo .tarjetaProducto .tarjetaItem {
+  margin: 5px 0;
+  display: block;
+  padding-left: 20px;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .imagenNombre {
+  font-size: 2em;
+  text-align: center;
+  font-style: italic;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .imagenProducto {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .tarjetaCabecera {
+  margin-top: 10px;
+  border-top: 1px solid #697979;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .tarjetaCabecera .tarjetaItem {
+  color: #1f5bca;
+}
+
+.contenedorPDF .contenedorCuerpo .tarjetaProducto .tarjetaCabecera .tarjetaItem .itemDato {
+  background-color: #00a116dc;
+  color: white;
+  padding: 3px;
+}
+
+.contenedorPDF .contenedorCuerpo .infoCompra {
+  width: 40%;
+  float: right;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contenedorPDF .contenedorCuerpo .infoCompra .datosCompra {
+  margin-bottom: 10px;
+}
+
+.contenedorPDF .contenedorCuerpo .infoCompra .datosCompra .tituloCompra {
+  border-top: #007777 solid 2px;
+  border-right: #007777 solid 2px;
+  background-color: #62caca;
+  padding: 5px;
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+}
+
+.contenedorPDF .contenedorCuerpo .infoCompra .datosCompra .datoItem {
+  color: #1f5bca;
+  margin: 5px 0;
+  display: block;
+  padding: 10px;
+  margin: 0;
+  background-color: #e2e4f0;
+  border: solid 1px #363636;
+}
+
+.contenedorPDF .contenedorCuerpo .infoCompra .datosCompra .datoItem .itemDato {
+  background-color: #00a116dc;
+  color: white;
+  padding: 3px;
+}
+
+.contenedorPie {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17.5px;
+}
+
+.contenedorPie .datoItem {
+  padding: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #1f5bca;
+}
+
+.contenedorPie .datoItem .itemDato {
+  background-color: #00a116dc;
+  color: white;
+  padding: 3px;
+}
+/*# sourceMappingURL=FacturasEstilos.css.map */

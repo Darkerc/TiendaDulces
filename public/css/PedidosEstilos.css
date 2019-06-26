@@ -1,0 +1,180 @@
+.productoPedido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto 0 auto;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 85%;
+  padding: 60px 20px;
+  border-radius: 50px;
+}
+
+.productoPedido img {
+  display: block;
+  width: 45%;
+  height: 350px;
+  margin: 0 2.5%;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 5px black;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.productoPedido img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.productoPedido div, .productoPedido form {
+  width: 45%;
+  margin: 0 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.productoPedido div label, .productoPedido form label {
+  display: block;
+  text-align: center;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe200), color-stop(#00b1ff), to(#ffe200));
+  background: linear-gradient(#ffe200, #00b1ff, #ffe200);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.productoPedido div span, .productoPedido form span {
+  display: block;
+  margin: auto auto auto 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00b1ff), color-stop(#ffe200), to(#00b1ff));
+  background: linear-gradient(#00b1ff, #ffe200, #00b1ff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.productoPedido div input, .productoPedido form input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  background-color: #2339bf;
+  color: white;
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  margin: 0;
+  font-size: 25px;
+  text-align: center;
+}
+
+.productoPedido div input:active, .productoPedido form input:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.productoPedido div input:hover, .productoPedido form input:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.productoPedido div div, .productoPedido form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin: auto 0 auto 0;
+}
+
+.productoPedido div div button, .productoPedido form div button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #2339bf;
+  color: white;
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  margin: 0;
+  font-size: 30px;
+}
+
+.productoPedido div div button:active, .productoPedido form div button:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.productoPedido div div button:hover, .productoPedido form div button:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.productoPedido div div label, .productoPedido form div label {
+  margin: 0;
+  display: block;
+  text-align: left;
+}
+
+.productoPedido div div input, .productoPedido form div input {
+  display: block;
+  width: 50px;
+  margin: auto 0;
+  height: 30px;
+  padding: .3em;
+  color: black;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  font-size: medium;
+  font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+}
+
+.productoPedido div div input:focus, .productoPedido form div input:focus {
+  cursor: text;
+  -webkit-box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+          box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+}
+
+.productoPedido div div input:hover, .productoPedido form div input:hover {
+  cursor: text;
+  color: black;
+}
+
+label.noAdmitido, label.admitido {
+  text-align: center;
+  display: block;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+label.noAdmitido {
+  color: #f11717;
+}
+
+label.admitido {
+  color: #17dd42;
+}
+/*# sourceMappingURL=PedidosEstilos.css.map */

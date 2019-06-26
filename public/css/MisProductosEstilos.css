@@ -1,0 +1,36 @@
+.listaProductos .etiquetasProductos {
+  font-size: .5em;
+  text-align: center;
+  font-family: "comic sans ms",Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin: auto;
+  width: 75%;
+  padding: .5em;
+  border-radius: 10px;
+  background-color: rgba(80, 238, 59, 0.8);
+}
+
+.listaProductos .etiquetasProductos label {
+  margin: auto;
+  display: block;
+}
+
+.listaProductos .etiquetasProductos legend {
+  display: block;
+  margin: auto;
+}
+
+.listaProductos .etiquetasProductos div {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+.listaProductos .etiquetasProductos div img {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=MisProductosEstilos.css.map */

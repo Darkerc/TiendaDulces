@@ -1,0 +1,274 @@
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  background-image: url("/images/AsrielGHD.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+body div#app {
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.contenedorPrincipal {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  margin: auto;
+  /*margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;*/
+}
+
+.formLogin {
+  width: 40%;
+  height: 26em;
+  font-family: "londrina-shadow","comic sans ms",sans-serif;
+  font-size: 20px;
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10%;
+  background-color: rgba(35, 57, 191, 0.75);
+  padding: 30px;
+  margin: auto;
+  margin-top: 1em;
+  text-align: left;
+}
+
+@media screen and (max-width: 321px) {
+  .formLogin {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .formLogin {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .formLogin {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .formLogin {
+    width: 75%;
+  }
+}
+
+.formLogin legend {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: .5em;
+  font-size: 1.5em;
+}
+
+.formLogin span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5em;
+  font-size: 1.2em;
+}
+
+.formLogin input {
+  width: 100%;
+  height: 3em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: .5em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-family: 'Comic Sans MS',Cambria, Cochin, Georgia, Times, Times New Roman, sans-serif;
+  font-size: medium;
+}
+
+.formLogin input:focus {
+  -webkit-box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+          box-shadow: 0.4em 0.4em 20px 0 #62f6f1, -0.4em -0.4em 20px 0 #62f6f1, 0.5em -0.4em 20px 0 #62f6f1, -0.4em 0.4em 20px 0 #62f6f1;
+}
+
+.formLogin div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5em;
+}
+
+.formLogin div input {
+  background-color: #2339bf;
+  color: white;
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  margin: 0;
+}
+
+.formLogin div input:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.formLogin div input:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.formLogin div.generaRegistro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffffff;
+}
+
+.formLogin div.generaRegistro label.legenda {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.formLogin div.generaRegistro a.registro {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  color: #ffffff;
+}
+
+.formLogin div.generaRegistro a.registro:hover {
+  color: gold;
+}
+
+.formLogin .campoErroneo {
+  display: block;
+  color: #e61c1c;
+}
+
+.formLogin .campoValido {
+  color: #21ca00;
+}
+
+.sentenciaSql {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 100;
+  top: 75%;
+  left: 85%;
+  background-color: #2339bf;
+  color: white;
+  border: 2px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 0px 3px #000;
+          box-shadow: 0px 0px 0px 3px #000;
+  font-size: 20px;
+  font-family: 'Comic Sans MS','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sentenciaSql:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.sentenciaSql:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.sentenciaSql span {
+  margin: auto;
+}
+
+.tgSQL {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  background-color: rgba(35, 29, 29, 0.75);
+}
+
+.tgSQL div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  height: 50%;
+  margin: auto auto auto auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 5px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  background-color: rgba(35, 57, 191, 0.75);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 3px;
+}
+
+.tgSQL div label {
+  border: none;
+  display: block;
+  text-align: center;
+}
+
+.tgSQL div ul {
+  width: 100%;
+  border: none;
+  margin: 0;
+}
+
+.tgSQLNone {
+  display: none;
+}
+/*# sourceMappingURL=PaginaInicio.css.map */
