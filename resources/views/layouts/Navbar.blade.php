@@ -1,10 +1,11 @@
 <nav class='navegacionPrincipal'>
+    <div>Dulces online</div>
     <ul>
         <li>
-            <a href="{{ route("Comprar") }}">Comprar</a>
+            <a href="{{ route("Comprar") }}">Realizar Comprar</a>
         </li>
         <li>
-            <a href="{{ route("Productos") }}">Productos</a>
+            <a href="{{ route("Productos") }}">Productos Totales</a>
         </li>
         <li>
             <a href="{{ route("CreaProducto") }}">Crear Producto</a>

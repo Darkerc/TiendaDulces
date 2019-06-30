@@ -271,4 +271,13 @@ body div#app {
 .tgSQLNone {
   display: none;
 }
+
+.sinRegistro {
+  color: white;
+  background-color: #b40000;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=PaginaInicio.css.map */

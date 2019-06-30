@@ -1,8 +1,9 @@
 @extends('layouts.TemplateIndex')
 
 @section('container')
+    {{ Form::open(['method' => 'PUT', 'class'=>'creaProducto','url'=> route("productosCRUD",["idProducto"=>$datosProducto->id,"tipo"=>"ACTUALIZAR"]),"id"=>"enviaProducto","name"=>"enviaProducto",'files' => true ]) }}
 
-    <form class="creaProducto" enctype="multipart/form-data" action="{{ route("subirproducto") }}" method="put" id="enviaProducto" name="enviaProducto">
+        {{ method_field('PUT') }}
         {{ csrf_field() }}
         <label for="NombreProducto" class="input">Nombre del producto: </label>
         <input type="text" name="Nombre_Producto" id="Nombre_Producto" class="input" value="{{ $datosProducto->Nombre_Producto }}">
@@ -30,13 +31,14 @@
 
         <input type="submit" value="Subir Producto" class="submit">
 
-    </form>
+    {{ Form::close() }}
 
   @endsection
 
 @section('scripts')
 
     <script src="/js/jquery.validate.js"></script>
-    <script src="/js/CreaProducto-script.js"></script>
+    <script src="/js/ActualizaProducto-script.js"></script>
 
 @endsection
+

@@ -3,7 +3,10 @@
 @section('container')
     @csrf
         <div class="contenedorProductos">
-            @foreach ($productosTiendas as $producto)
+            @if ($productosTiendas->isEmpty())
+            <div class="sinRegistro">No existen productos disponibles para comprar</div>
+            @else
+                @foreach ($productosTiendas as $producto)
                 <a href="{{ route("Pedidos", ["idProducto" => $producto->id]) }}">
                     <legend>
                         {{ $producto->Nombre_Producto  }}
@@ -16,6 +19,7 @@
                     </span>
                     <img src="/images/ProductoImg/{{ $producto->Tienda_Duena->Nombre_Tienda ."/". $producto->Imagen_Producto }}" />
                 </a>
-            @endforeach
+                @endforeach
+            @endif
         </div>
 @endsection

@@ -1,15 +1,39 @@
 .navegacionPrincipal {
   background-color: rgba(35, 57, 191, 0.75);
-  font-size: 25px;
+  font-size: 20px;
+  font-family: "comic sans ms",Verdana, Geneva, Tahoma, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navegacionPrincipal div {
+  margin: auto;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2339bf;
 }
 
 .navegacionPrincipal ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  margin: auto;
+  padding: 0;
   height: 100%;
 }
 
@@ -21,7 +45,8 @@
 
 .navegacionPrincipal ul li {
   list-style: none;
-  margin: auto;
+  margin: 0;
+  height: 100%;
 }
 
 .navegacionPrincipal ul li a, .navegacionPrincipal ul li label {
@@ -29,13 +54,18 @@
   transition: all ease-in-out 300ms;
   color: white;
   text-decoration: none;
-  padding: .25em;
-  border-radius: 10px;
-  border: 3px solid rgba(255, 250, 0, 0.8);
+  padding: 1em .5em;
   background-color: #2339bf;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
+  display: block;
   cursor: pointer;
+  height: 100%;
+  text-align: center;
+  border-right: gold 1px solid;
+  border-left: gold 1px solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .navegacionPrincipal ul li a:active, .navegacionPrincipal ul li label:active {

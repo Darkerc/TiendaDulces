@@ -33,3 +33,6 @@ Route::get('Producto/ActualizaProducto/{idProducto}','TiendasController@actualiz
 Route::post('Producto/CreaFactura/{idProducto}','TiendasController@creaFactura')->name('CreaFactura');
 Route::post('/Comprar','TiendasController@subirProducto')->name('subirproducto');
 
+Route::any('/Producto/{tipo}/{idProducto?}','TiendasController@productosCRUD')->name('productosCRUD');
+
+

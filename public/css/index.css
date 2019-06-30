@@ -272,18 +272,51 @@ body div#app {
   display: none;
 }
 
+.sinRegistro {
+  color: white;
+  background-color: #b40000;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+}
+
 .navegacionPrincipal {
   background-color: rgba(35, 57, 191, 0.75);
-  font-size: 25px;
+  font-size: 20px;
+  font-family: "comic sans ms",Verdana, Geneva, Tahoma, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navegacionPrincipal div {
+  margin: auto;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2339bf;
 }
 
 .navegacionPrincipal ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  margin: auto;
+  padding: 0;
   height: 100%;
 }
 
@@ -295,7 +328,8 @@ body div#app {
 
 .navegacionPrincipal ul li {
   list-style: none;
-  margin: auto;
+  margin: 0;
+  height: 100%;
 }
 
 .navegacionPrincipal ul li a, .navegacionPrincipal ul li label {
@@ -303,13 +337,18 @@ body div#app {
   transition: all ease-in-out 300ms;
   color: white;
   text-decoration: none;
-  padding: .25em;
-  border-radius: 10px;
-  border: 3px solid rgba(255, 250, 0, 0.8);
+  padding: 1em .5em;
   background-color: #2339bf;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
+  display: block;
   cursor: pointer;
+  height: 100%;
+  text-align: center;
+  border-right: gold 1px solid;
+  border-left: gold 1px solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .navegacionPrincipal ul li a:active, .navegacionPrincipal ul li label:active {
@@ -1251,40 +1290,87 @@ label.admitido {
   text-align: center;
 }
 
-.listaProductos .etiquetasProductos {
-  font-size: .5em;
+.tablaProductos {
+  margin: auto;
+  overflow-x: auto;
+  width: 95%;
+}
+
+.tablaProductos .tbResponsive {
+  min-width: 1000px;
+  overflow: auto;
+  border-collapse: collapse !important;
+  margin: auto;
+  background: rgba(60, 51, 51, 0.5) !important;
+  color: white;
+  font-size: 20px;
+  border: solid 2px #2f2828;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.tablaProductos .tbResponsive thead {
+  padding: 0;
+}
+
+.tablaProductos .tbResponsive thead th:first-child {
+  width: 8em;
+}
+
+.tablaProductos .tbResponsive thead tr {
+  display: table-row;
+  background-color: #3c3333;
+  border: 3px solid #3c3333;
+}
+
+.tablaProductos .tbResponsive thead td {
+  border: 3px solid #3c3333;
   text-align: center;
-  font-family: "comic sans ms",Arial, Helvetica, sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  margin: auto;
-  width: 75%;
-  padding: .5em;
-  border-radius: 10px;
-  background-color: rgba(80, 238, 59, 0.8);
 }
 
-.listaProductos .etiquetasProductos label {
-  margin: auto;
+.tablaProductos .tbResponsive tbody {
+  padding: 0;
+  position: relative;
+}
+
+.tablaProductos .tbResponsive tbody tr {
+  background-color: #635252;
+}
+
+.tablaProductos .tbResponsive tbody tr td:first-child {
+  position: absolute;
+  background-color: #635252;
+  width: 8em;
+}
+
+.tablaProductos .tbResponsive tbody tr td {
+  border: 3px solid #3c3333;
+  text-align: center;
+}
+
+.tablaProductos .tbResponsive tbody tr td a.actualizar {
+  text-decoration: none;
+  color: white;
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .1em;
+  background-color: #00b400;
 }
 
-.listaProductos .etiquetasProductos legend {
+.tablaProductos .tbResponsive tbody tr td a.eliminar {
+  text-decoration: none;
+  color: white;
   display: block;
-  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: .1em;
+  background-color: #b40000;
 }
 
-.listaProductos .etiquetasProductos div {
-  width: 50px;
-  height: 50px;
-  margin: auto;
-}
-
-.listaProductos .etiquetasProductos div img {
-  width: 100%;
-  height: 100%;
+.tablaProductos .tbResponsive tr:hover td:first-child {
+  background-color: #223e8b;
+  color: white;
 }
 
 .footer {

@@ -2,7 +2,7 @@
 
 @section('container')
 
-    <form class="creaProducto" enctype="multipart/form-data" action="{{ route("subirproducto") }}" method="post" id="enviaProducto" name="enviaProducto">
+    <form class="creaProducto" enctype="multipart/form-data" action="{{ route("productosCRUD",["tipo"=>"CREAR"]) }}" method="post" id="enviaProducto" name="enviaProducto">
         {{ csrf_field() }}
         <label for="NombreProducto" class="input">Nombre del producto: </label>
         <input type="text" name="Nombre_Producto" id="Nombre_Producto" class="input">

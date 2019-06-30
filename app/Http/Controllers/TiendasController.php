@@ -12,6 +12,18 @@ use Dompdf\Dompdf;
 
 class TiendasController extends Controller
 {
+
+    public function verificaSession(){
+        if(session()->has('TIENDA')==true){
+
+            return ["SessionIniciada" => true,
+                    "Redirect" => ""];
+        }else{
+            return ["SessionIniciada" => false,
+                    "Redirect" => redirect()->route("Index")];
+        }
+    }
+
     public function index(){
         if(session()->has('TIENDA')==true){
             return redirect()->route("Productos");
@@ -23,12 +35,13 @@ class TiendasController extends Controller
         if(session()->has('TIENDA')==true){
             return redirect()->route("Productos");
         }
+
         return view("Registro");
     }
 
     public function comprar(){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         //Productos que no pertenecen a la tienda que ha iniciado session
         $productosTiendas=Producto::whereNotIn("Tienda_Id",[session()->get('TIENDA')])->get();
@@ -38,8 +51,8 @@ class TiendasController extends Controller
 
     public function productos(){
 
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         $productos=Producto::all();
 
@@ -47,15 +60,15 @@ class TiendasController extends Controller
     }
 
     public function creaProducto(){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         return view("CreaProducto");
     }
 
     public function misFacturas(){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         $facturasTienda=Factura::where("Tienda_Id",session()->get("TIENDA"))->get();
 
@@ -63,8 +76,8 @@ class TiendasController extends Controller
     }
 
     public function misProductos(){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
 
         $productosUsuario=Producto::where("Tienda_Id",session()->get("TIENDA"))->get();
@@ -73,8 +86,8 @@ class TiendasController extends Controller
     }
 
     public function actualizaProducto($idProducto){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         $datosProducto=Producto::findOrFail($idProducto);
 
@@ -83,8 +96,8 @@ class TiendasController extends Controller
     }
 
     public function verFactura($idFactura){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
         $datosFactura=Factura::findOrFail($idFactura);
 
@@ -103,15 +116,16 @@ class TiendasController extends Controller
         //Renderizar html como pdf
         $creaPDF->render();
 
-        return $creaPDF->stream("Factura",array("Attachment" => 0));;
+        return $creaPDF->stream("Factura",array("Attachment" => 0));
+
     }
 
     public function pedidos($idProducto){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+        if(!$this->verificaSession()["SessionIniciada"]){
+            return $this->verificaSession()["Redirect"];
         }
 
-        $productoPedido=Producto::findOrFail($id);
+        $productoPedido=Producto::findOrFail($idProducto);
         $tiendaId=session()->get("TIENDA");
 
         if($tiendaId==$productoPedido->Tienda_Id){
@@ -159,31 +173,6 @@ class TiendasController extends Controller
         return redirect()->route("Index");
     }
 
-    public function subirProducto(Request $request){
-        $datosProducto=$request->all();
-        $idTienda=session()->get('TIENDA');
-        $nombreTienda=Tienda::findOrFail($idTienda);
-        $cantidadProductosTotales=Producto::where("Tienda_Id",$idTienda)->count();
-
-        if($archivo=$request->file('Imagen_Producto')){
-
-            //Nombre de la imagen que se ha seleccionado para en el formulario para guardar
-            $nombre="Img_Producto" . ((( int ) $cantidadProductosTotales)+1) . "." .$archivo->getClientOriginalExtension();
-
-            //Mueve la imagen al directorio 'images' y le asigna un nombre que es el de la propia imagen
-            $archivo->move('images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" ,$nombre);
-
-            //Asignandole la ruta de la imagen a la variable entrada
-            $datosProducto['Imagen_Producto']=$nombre;
-            $datosProducto['Tienda_Id']=$idTienda;
-        }
-
-        //Almacennando los datos en la BBDD
-        Producto::create($datosProducto);
-
-        return redirect()->route("Comprar");
-    }
-
     public function creaFactura($idProducto){
         $proveedorId=rand(1,3);
 
@@ -196,10 +185,85 @@ class TiendasController extends Controller
         return redirect()->route("Comprar");
     }
 
-    public static function verificaSession(){
-        if(session()->has('TIENDA')==false){
-            return redirect()->route("Index");
+    public function productosCRUD(Request $request,$tipo,$id=0){
+        switch ($tipo) {
+            case "ACTUALIZAR":
+            $datosProducto=$request->all();
+            $idTienda=session()->get('TIENDA');
+            $nombreTienda=Tienda::findOrFail($idTienda);
+            $cantidadProductosTotales=Producto::where("Tienda_Id",$idTienda)->count();
+            $producto=Producto::findOrFail($id);
+
+            if($archivo=$request->file('Imagen_Producto')){
+
+                $contador=1;
+                $nombre="Img_Producto" . ((( int ) $cantidadProductosTotales)+($contador)) . "." .$archivo->getClientOriginalExtension();
+                $url='images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" . $nombre;
+
+                //Verificando si exite la ruta y modificandola para crear un nuevo nombre a la imagen
+                while (is_file($url)) {
+                    $contador++;
+                    //Nombre de la imagen que se ha seleccionado para en el formulario para guardar
+                    $nombre="Img_Producto" . ((( int ) $cantidadProductosTotales)+($contador)) . "." .$archivo->getClientOriginalExtension();
+                    $url='images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" . $nombre;
+                }
+
+                //Mueve la imagen al directorio 'images' y le asigna un nombre que es el de la propia imagen
+                $archivo->move('images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" ,$nombre);
+
+                //Asignandole la ruta de la imagen a la variable entrada
+                $datosProducto['Imagen_Producto']=$nombre;
+                $datosProducto['Tienda_Id']=$idTienda;
+
+                //Actualizando el producto
+                $producto->update($datosProducto);
+            }
+
+                break;
+
+            case "CREAR":
+                $datosProducto=$request->all();
+                $idTienda=session()->get('TIENDA');
+                $nombreTienda=Tienda::findOrFail($idTienda);
+                $cantidadProductosTotales=Producto::where("Tienda_Id",$idTienda)->count();
+
+                if($archivo=$request->file('Imagen_Producto')){
+
+                    $contador=1;
+                    $nombre="Img_Producto" . ((( int ) $cantidadProductosTotales)+($contador)) . "." .$archivo->getClientOriginalExtension();
+                    $url='images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" . $nombre;
+
+                    //Verificando si exite la ruta y modificandola para crear un nuevo nombre a la imagen
+                    while (is_file($url)) {
+                        $contador++;
+                        //Nombre de la imagen que se ha seleccionado para en el formulario para guardar
+                        $nombre="Img_Producto" . ((( int ) $cantidadProductosTotales)+($contador)) . "." .$archivo->getClientOriginalExtension();
+                        $url='images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" . $nombre;
+                    }
+
+                    //Mueve la imagen al directorio 'images' y le asigna un nombre que es el de la propia imagen
+                    $archivo->move('images/ProductoImg/' . $nombreTienda->Nombre_Tienda . "/" ,$nombre);
+
+                    //Asignandole la ruta de la imagen a la variable entrada
+                    $datosProducto['Imagen_Producto']=$nombre;
+                    $datosProducto['Tienda_Id']=$idTienda;
+                }
+
+                //Almacennando los datos en la BBDD
+                Producto::create($datosProducto);
+                break;
+
+            case "ELIMINAR":
+                Producto::destroy($id);
+            break;
+
+            default:
+
+            return redirect()->route("MisProductos");
+            break;
         }
-        return null;
+
+        return redirect()->route("MisProductos");
     }
+
 }

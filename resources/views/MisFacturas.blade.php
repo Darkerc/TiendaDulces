@@ -4,7 +4,7 @@
 
 <div class="muestraFactura">
         @if ($facturasTienda->isEmpty())
-            <div>No se ha realizado ninguna compra</div>
+            <div class="sinRegistro">No se ha realizado ninguna compra</div>
         @else
             <div class="tituloFactura">Facturas de: {{ $facturasTienda[0]->Tienda_Duena->Nombre_Tienda }}</div>
             <ul class="listaFacturas">
@@ -16,9 +16,9 @@
                     <label for="btnImprimir" class="lbFactura">
                         <span class="folio">Folio #{{ $factura->id }}</span>
                         <span>Dia: {{ $factura->Fecha_Compra->format('d') }}</span>
-                        <span>Mes: {{ $factura->Fecha_Compra->format('m') }} </span>
-                        <span>Año: {{ $factura->Fecha_Compra->format('y') }}</span>
-                        <legend> {{ $factura->Producto->Nombre_Producto }}</legend>
+                        <span>Mes: {{ $factura->Fecha_Compra->format('M') }} </span>
+                        <span>Año: {{ $factura->Fecha_Compra->format('Y') }}</span>
+                        <legend> {{ $factura->Producto["Nombre_Producto"] }}</legend>
                     </label>
                     </li>
                 @endforeach
