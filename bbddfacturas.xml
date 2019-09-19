@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.5
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1
+- Tiempo de generación: 08-05-2019 a las 02:04:15
+- Versión del servidor: 10.1.39-MariaDB
+- Versión de PHP: 7.3.5
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="bbddfacturas" collation="utf8mb4_spanish_ci" charset="utf8mb4">
+            <pma:table name="empresasenvios">
+                CREATE TABLE `empresasenvios` (
+                  `CodigoEmpresa` varchar(50) NOT NULL,
+                  `NombreEmpresa` varchar(50) DEFAULT NULL,
+                  PRIMARY KEY (`CodigoEmpresa`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="facturas">
+                CREATE TABLE `facturas` (
+                  `FolioFactura` int(11) NOT NULL AUTO_INCREMENT,
+                  `CodigoProducto` int(11) NOT NULL,
+                  `NumProveedor` int(11) NOT NULL,
+                  `TiendaFacturada` int(11) NOT NULL,
+                  `FechaCompra` datetime DEFAULT CURRENT_TIMESTAMP,
+                  `CantidadProducto` int(11) NOT NULL,
+                  PRIMARY KEY (`FolioFactura`),
+                  KEY `Proveedor` (`NumProveedor`),
+                  KEY `TiendaCompra` (`TiendaFacturada`),
+                  CONSTRAINT `Producto` FOREIGN KEY (`CodigoProducto`) REFERENCES `productos` (`CodigoProducto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                  CONSTRAINT `Proveedor` FOREIGN KEY (`NumProveedor`) REFERENCES `proveedores` (`NumProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                  CONSTRAINT `TiendaCompra` FOREIGN KEY (`TiendaFacturada`) REFERENCES `tienda` (`idTienda`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="productos">
+                CREATE TABLE `productos` (
+                  `CodigoProducto` int(11) NOT NULL AUTO_INCREMENT,
+                  `TiendaDueña` int(11) NOT NULL,
+                  `NombreProducto` varchar(45) DEFAULT 'Nombre no asignado',
+                  `Precio` int(11) DEFAULT '0',
+                  `Existencias` int(11) DEFAULT '0',
+                  `ImagenProducto` varchar(300) DEFAULT NULL,
+                  PRIMARY KEY (`CodigoProducto`),
+                  KEY `TiendaDueña` (`TiendaDueña`),
+                  CONSTRAINT `TiendaCreadora` FOREIGN KEY (`TiendaDueña`) REFERENCES `tienda` (`idTienda`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="proveedores">
+                CREATE TABLE `proveedores` (
+                  `NumProveedor` int(11) NOT NULL AUTO_INCREMENT,
+                  `Nombre` varchar(45) DEFAULT NULL,
+                  `EmpresaPerteneciente` varchar(50) NOT NULL,
+                  `PrimerApellido` varchar(30) DEFAULT NULL,
+                  `SegundoApellido` varchar(30) DEFAULT NULL,
+                  PRIMARY KEY (`NumProveedor`),
+                  KEY `EmpresasProveedores_idx` (`EmpresaPerteneciente`),
+                  CONSTRAINT `EmpresasProveedores` FOREIGN KEY (`EmpresaPerteneciente`) REFERENCES `empresasenvios` (`CodigoEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="tienda">
+                CREATE TABLE `tienda` (
+                  `idTienda` int(11) NOT NULL AUTO_INCREMENT,
+                  `NombreTienda` varchar(30) NOT NULL,
+                  `Pais` varchar(20) DEFAULT 'Desconocida',
+                  `Estado` varchar(20) DEFAULT 'Desconocida',
+                  `Colonia` varchar(20) DEFAULT 'Desconocida',
+                  `Contrasegna` varchar(200) DEFAULT NULL,
+                  `Encargado` varchar(45) DEFAULT 'Desconocida',
+                  PRIMARY KEY (`idTienda`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'bbddfacturas'
+    -->
+    <database name="bbddfacturas">
+        <!-- Tabla empresasenvios -->
+        <table name="empresasenvios">
+            <column name="CodigoEmpresa">123DHL123</column>
+            <column name="NombreEmpresa">DHL</column>
+        </table>
+        <table name="empresasenvios">
+            <column name="CodigoEmpresa">456FEDEX456</column>
+            <column name="NombreEmpresa">FEDEX</column>
+        </table>
+        <table name="empresasenvios">
+            <column name="CodigoEmpresa">789EnviosRolon789</column>
+            <column name="NombreEmpresa">EnviosRolon</column>
+        </table>
+        <!-- Tabla facturas -->
+        <table name="facturas">
+            <column name="FolioFactura">3</column>
+            <column name="CodigoProducto">1</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-29 20:23:07</column>
+            <column name="CantidadProducto">5</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">4</column>
+            <column name="CodigoProducto">1</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-29 20:27:52</column>
+            <column name="CantidadProducto">15</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">5</column>
+            <column name="CodigoProducto">16</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">3</column>
+            <column name="FechaCompra">2019-03-29 20:59:12</column>
+            <column name="CantidadProducto">5</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">6</column>
+            <column name="CodigoProducto">6</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">3</column>
+            <column name="FechaCompra">2019-03-29 21:00:04</column>
+            <column name="CantidadProducto">10</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">7</column>
+            <column name="CodigoProducto">9</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-29 21:22:15</column>
+            <column name="CantidadProducto">0</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">8</column>
+            <column name="CodigoProducto">10</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-29 21:52:23</column>
+            <column name="CantidadProducto">5</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">9</column>
+            <column name="CodigoProducto">3</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-30 22:59:56</column>
+            <column name="CantidadProducto">9</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">10</column>
+            <column name="CodigoProducto">14</column>
+            <column name="NumProveedor">3</column>
+            <column name="TiendaFacturada">1</column>
+            <column name="FechaCompra">2019-03-30 23:00:21</column>
+            <column name="CantidadProducto">7</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">11</column>
+            <column name="CodigoProducto">14</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">3</column>
+            <column name="FechaCompra">2019-05-07 16:54:15</column>
+            <column name="CantidadProducto">50</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">12</column>
+            <column name="CodigoProducto">1</column>
+            <column name="NumProveedor">1</column>
+            <column name="TiendaFacturada">3</column>
+            <column name="FechaCompra">2019-05-07 17:08:00</column>
+            <column name="CantidadProducto">100</column>
+        </table>
+        <table name="facturas">
+            <column name="FolioFactura">13</column>
+            <column name="CodigoProducto">1</column>
+            <column name="NumProveedor">2</column>
+            <column name="TiendaFacturada">3</column>
+            <column name="FechaCompra">2019-05-07 18:36:07</column>
+            <column name="CantidadProducto">10</column>
+        </table>
+        <!-- Tabla productos -->
+        <table name="productos">
+            <column name="CodigoProducto">1</column>
+            <column name="TiendaDueña">1</column>
+            <column name="NombreProducto">Choco KitKat</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">200</column>
+            <column name="ImagenProducto">kitkat2.png</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">2</column>
+            <column name="TiendaDueña">2</column>
+            <column name="NombreProducto">Obleas</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">500</column>
+            <column name="ImagenProducto">oblea3.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">6</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">ChocoLoco</column>
+            <column name="Precio">500</column>
+            <column name="Existencias">10</column>
+            <column name="ImagenProducto">chocolate1.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">7</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Bombones Valentin</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">50</column>
+            <column name="ImagenProducto">bombones1.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">8</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Bombones Convencionales</column>
+            <column name="Precio">2</column>
+            <column name="Existencias">2000</column>
+            <column name="ImagenProducto">bombones2.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">9</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Oblea de cajeta</column>
+            <column name="Precio">5</column>
+            <column name="Existencias">800</column>
+            <column name="ImagenProducto">oblea2.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">10</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Galletas Finas</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">400</column>
+            <column name="ImagenProducto">galletas3.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">11</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Cacahuates Chinos</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">255</column>
+            <column name="ImagenProducto">cacahuate3.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">12</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Cacahuates Naturales</column>
+            <column name="Precio">20</column>
+            <column name="Existencias">600</column>
+            <column name="ImagenProducto">cacahuate2.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">13</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Galletas Navide&amp;ntilde;as</column>
+            <column name="Precio">100</column>
+            <column name="Existencias">20</column>
+            <column name="ImagenProducto">galletas1.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">14</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Bombones Naturales</column>
+            <column name="Precio">10</column>
+            <column name="Existencias">300</column>
+            <column name="ImagenProducto">remedio-con-bombones-para-dolor-de-garganta.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">15</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">ChocoGalletas</column>
+            <column name="Precio">15</column>
+            <column name="Existencias">300</column>
+            <column name="ImagenProducto">galletas2.png</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">16</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Obleas de colores</column>
+            <column name="Precio">2</column>
+            <column name="Existencias">500</column>
+            <column name="ImagenProducto">Mexican-Candy-Obleas-Medianas__43488.1467651587.1280.1280.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">17</column>
+            <column name="TiendaDueña">1</column>
+            <column name="NombreProducto">Helados Malvavisco</column>
+            <column name="Precio">5</column>
+            <column name="Existencias">100</column>
+            <column name="ImagenProducto">HeladosMalvavisco.jpeg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">18</column>
+            <column name="TiendaDueña">3</column>
+            <column name="NombreProducto">Pizza Dulce</column>
+            <column name="Precio">30</column>
+            <column name="Existencias">200</column>
+            <column name="ImagenProducto">PizzaDulce.jpg</column>
+        </table>
+        <table name="productos">
+            <column name="CodigoProducto">19</column>
+            <column name="TiendaDueña">1</column>
+            <column name="NombreProducto">Ositos de goma</column>
+            <column name="Precio">15</column>
+            <column name="Existencias">500</column>
+            <column name="ImagenProducto">OsitosGoma.jpg</column>
+        </table>
+        <!-- Tabla proveedores -->
+        <table name="proveedores">
+            <column name="NumProveedor">1</column>
+            <column name="Nombre">LaNayanci</column>
+            <column name="EmpresaPerteneciente">789EnviosRolon789</column>
+            <column name="PrimerApellido">Garcia</column>
+            <column name="SegundoApellido">Rodriguez</column>
+        </table>
+        <table name="proveedores">
+            <column name="NumProveedor">2</column>
+            <column name="Nombre">Leo</column>
+            <column name="EmpresaPerteneciente">789EnviosRolon789</column>
+            <column name="PrimerApellido">Rodriguez</column>
+            <column name="SegundoApellido">Rolon</column>
+        </table>
+        <table name="proveedores">
+            <column name="NumProveedor">3</column>
+            <column name="Nombre">Chuchito</column>
+            <column name="EmpresaPerteneciente">123DHL123</column>
+            <column name="PrimerApellido">De la Cruz</column>
+            <column name="SegundoApellido">De Dios</column>
+        </table>
+        <!-- Tabla tienda -->
+        <table name="tienda">
+            <column name="idTienda">1</column>
+            <column name="NombreTienda">Hamburguesas Leos</column>
+            <column name="Pais">Mexico</column>
+            <column name="Estado">Tabasco</column>
+            <column name="Colonia">Indeco</column>
+            <column name="Contrasegna">$2y$12$vNjghxx/.NQ12wo5e1n1f.7WC3hBYrOqx2xl3rZzBFCgavGp74Hhu</column>
+            <column name="Encargado">Chuchin</column>
+        </table>
+        <table name="tienda">
+            <column name="idTienda">2</column>
+            <column name="NombreTienda">Quesadillas Garcia</column>
+            <column name="Pais">Mexico</column>
+            <column name="Estado">Tabasco</column>
+            <column name="Colonia">Gaviotas</column>
+            <column name="Contrasegna">$2y$12$w/ruikdGIJQScm0e3Vm1HeQMgPnJf9hGJj1yL7RJ27Eeh/H2ZKVcm</column>
+            <column name="Encargado">Dio</column>
+        </table>
+        <table name="tienda">
+            <column name="idTienda">3</column>
+            <column name="NombreTienda">Dulceria LOL</column>
+            <column name="Pais">Colombia</column>
+            <column name="Estado">colombiano</column>
+            <column name="Colonia">Huachicol</column>
+            <column name="Contrasegna">$2y$12$dK/295QWj4DAmLZt8/t58OVUBOlFK/SWfPr.YXFId39FtGI/WYPtq</column>
+            <column name="Encargado">Chuchin</column>
+        </table>
+    </database>
+</pma_xml_export>

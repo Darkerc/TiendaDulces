@@ -1,0 +1,73 @@
+.muestraFactura{
+    background-color: rgba(#2339bf,0.75);
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0 auto;
+    height: 100%;
+    width: 85%;
+    box-sizing: border-box;
+
+    .tituloFactura{
+        width: 75%;
+        margin: 0 auto;
+        font-size: 30px;
+        text-align: center;
+        background: linear-gradient(#00b1ff,#ffe200,#00b1ff);
+        color: transparent;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -o-background-clip: text;
+
+    }
+
+    .listaFacturas{
+        font-size: 20px;
+        // height: 30px;
+        padding: 0;
+
+        .itemFactura{
+            list-style: none;
+            display: flex;
+            // height: 100%;
+            // overflow: auto;
+            .link{
+                display: block;
+                margin: auto 2.5% auto 2.5%;
+
+                .impFactura{
+                    background-color: #2339bf;
+                    color: white;
+                    border-radius: 10px;
+                    padding: .5em 1em;
+                    box-shadow: 0px 0px 0px 2px #000;
+                    font-family: "Comic sans ms",Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                    font-weight: 100;
+                    width: 125px;
+
+                    &:active {
+                        box-shadow: 0px 0px 0px 0px #000;
+                    }
+
+                    &:hover {
+                        color: gold;
+                        cursor: pointer;
+                    }
+                }
+            }   
+
+            .lbFactura{
+                margin: 0 auto;
+                margin-left: 15%;
+                background: linear-gradient(#00b1ff,#ffe200,#00b1ff);
+                color: transparent;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -o-background-clip: text;
+                overflow: auto;
+                text-align: center;
+            }
+
+        }
+    }
+}

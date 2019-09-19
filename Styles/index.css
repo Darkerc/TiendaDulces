@@ -10,6 +10,9 @@ body {
   font-size: 30px;
   margin: 0;
   padding: 0;
+}
+
+body div#app {
   overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,6 +21,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .contenedorPrincipal {
@@ -421,6 +428,8 @@ body {
   transition: all 300ms ease-in-out;
   cursor: pointer;
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .contenedorProductos a:before {
@@ -459,6 +468,10 @@ body {
   -webkit-transform: translateY(0);
           transform: translateY(0);
   z-index: 2;
+}
+
+.contenedorProductos a:focus {
+  border: 5px solid #2339bf;
 }
 
 .contenedorProductos a legend {
@@ -605,7 +618,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 0 auto;
   background-color: rgba(35, 57, 191, 0.75);
   width: 85%;
   padding: 60px 20px;
@@ -644,6 +657,7 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .productoPedido div label, .productoPedido form label {
@@ -760,6 +774,24 @@ body {
 .productoPedido div div input:hover, .productoPedido form div input:hover {
   cursor: text;
   color: black;
+}
+
+label.noAdmitido, label.admitido {
+  text-align: center;
+  display: block;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+label.noAdmitido {
+  color: #f11717;
+}
+
+label.admitido {
+  color: #17dd42;
 }
 
 .creaProducto {
@@ -1124,8 +1156,100 @@ body {
 .contenedorPie {
   position: absolute;
   top: 90%;
-  right: 50%;
+  left: 10%;
   color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17.5px;
+}
+
+.contenedorPie .datoItem {
+  padding: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #1f5bca;
+}
+
+.contenedorPie .datoItem .itemDato {
+  background-color: #00a116dc;
+  color: white;
+  padding: 3px;
+}
+
+.muestraFactura {
+  background-color: rgba(35, 57, 191, 0.75);
+  border-radius: 10px;
+  padding: 1em;
+  margin: 0 auto;
+  height: 100%;
+  width: 85%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.muestraFactura .tituloFactura {
+  width: 75%;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00b1ff), color-stop(#ffe200), to(#00b1ff));
+  background: linear-gradient(#00b1ff, #ffe200, #00b1ff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+}
+
+.muestraFactura .listaFacturas {
+  font-size: 20px;
+  padding: 0;
+}
+
+.muestraFactura .listaFacturas .itemFactura {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.muestraFactura .listaFacturas .itemFactura .link {
+  display: block;
+  margin: auto 2.5% auto 2.5%;
+}
+
+.muestraFactura .listaFacturas .itemFactura .link .impFactura {
+  background-color: #2339bf;
+  color: white;
+  border-radius: 10px;
+  padding: .5em 1em;
+  -webkit-box-shadow: 0px 0px 0px 2px #000;
+          box-shadow: 0px 0px 0px 2px #000;
+  font-family: "Comic sans ms",Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  width: 125px;
+}
+
+.muestraFactura .listaFacturas .itemFactura .link .impFactura:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px 0px #000;
+}
+
+.muestraFactura .listaFacturas .itemFactura .link .impFactura:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+.muestraFactura .listaFacturas .itemFactura .lbFactura {
+  margin: 0 auto;
+  margin-left: 15%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00b1ff), color-stop(#ffe200), to(#00b1ff));
+  background: linear-gradient(#00b1ff, #ffe200, #00b1ff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  overflow: auto;
+  text-align: center;
 }
 
 .footer {

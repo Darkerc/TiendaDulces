@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 0 auto;
   background-color: rgba(35, 57, 191, 0.75);
   width: 85%;
   padding: 60px 20px;
@@ -41,6 +41,7 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 .productoPedido div label, .productoPedido form label {
@@ -157,5 +158,23 @@
 .productoPedido div div input:hover, .productoPedido form div input:hover {
   cursor: text;
   color: black;
+}
+
+label.noAdmitido, label.admitido {
+  text-align: center;
+  display: block;
+  background-color: rgba(35, 57, 191, 0.75);
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+label.noAdmitido {
+  color: #f11717;
+}
+
+label.admitido {
+  color: #17dd42;
 }
 /*# sourceMappingURL=PedidosEstilos.css.map */

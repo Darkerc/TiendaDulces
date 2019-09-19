@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	'use strict';
-	
+
 	var nPedidos=1;
 	
 	$("#pedido").html("<span>" + nPedidos + "</span>");
@@ -62,18 +62,26 @@ $(document).ready(function(){
 			$(this).val(ultimoValor);
 			
 			$("#pedido").html("<span>" + ultimoValor + "</span>");
-			
-			
-			
 		}
-		
-		
 		e.preventDefault();
 		
 	});
-	
-	
-	
-	
-	
+
+	$("#formProducto").validate({
+		
+		rules:{
+			nPedido:{required:true,number:true,min:1,max:10000}
+		},
+		
+		messages:{
+			nPedido:{required:"No puede quedar vacio",number:"Debe ser un numero",min:"Minimo a un producto",max:"El maximo de pedidos es 10000"}
+		},
+
+		errorClass:"noAdmitido",
+
+		validClass:"admitido",
+
+		errorLabelContainer:contError
+	});
+
 });

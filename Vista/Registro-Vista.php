@@ -8,64 +8,58 @@
     <link type="text/css" rel="stylesheet" href="../Styles/index.css" />
 </head>
 <body>
+<div id="app">
+			<div class="contenedorPrincipal">
+			<form class="registroUsuarios" method="post" id="formRegistro" name="formRegistro" action="../Controlador/Index-Controlador.php">
+				<legend>Datos del formulario</legend>
+				<label>Nombre de la tienda</label>
+				<input type="text" placeholder="Nombre Tienda" id="NomTienda" name="NomTienda" />
 
-	<div class="contenedorPrincipal">
-		<form class="registroUsuarios" method="post" id="formRegistro" name="formRegistro" action="../Controlador/Index-Controlador.php">
-			<legend>Datos del formulario</legend>
-			<label>Nombre de la tienda</label>
-			<input type="text" placeholder="Nombre Tienda" id="NomTienda" name="NomTienda" />
+				<label>Contraseña</label>
+				<input type="password" placeholder="Contraseña" id="Contraseña" name="Contraseña" />
 
-			<label>Contraseña</label>
-			<input type="password" placeholder="Contraseña" id="Contraseña" name="Contraseña" />
+				<label>Confirmar contraseña</label>
+				<input type="password" placeholder="Confirmar contraseña" id="confContraseña" name="confContraseña" />
 
-			<label>Confirmar contraseña</label>
-			<input type="password" placeholder="Confirmar contraseña" id="confContraseña" name="confContraseña" />
+				<label>Pais</label>
+				<input type="text" placeholder="Pais" id="Pais" name="Pais" />
 
-			<label>Pais</label>
-			<input type="text" placeholder="Pais" id="Pais" name="Pais" />
+				<label>Estado</label>
+				<input type="text" placeholder="Estado" id="Estado" name="Estado" />
 
-			<label>Estado</label>
-			<input type="text" placeholder="Estado" id="Estado" name="Estado" />
+				<label>Colonia</label>
+				<input type="text" placeholder="Colonia" id="Colonia" name="Colonia" />
 
-			<label>Colonia</label>
-			<input type="text" placeholder="Colonia" id="Colonia" name="Colonia" />
+				<label>Encargado</label>
+				<input type="text" placeholder="Encargado" id="Encargado" name="Encargado" />
 
-			<label>Encargado</label>
-			<input type="text" placeholder="Encargado" id="Encargado" name="Encargado" />
+				<div>
+					<input type="submit" value="Enviar" />
+				</div>
+			</form>
+		</div>
 
-			<div>
-				<input type="submit" value="Enviar" />
+		<div class="tgSQLNone" id="mostrarSql">
+				<div>
+					<label>Sentencias SQL</label>
+					<ul>
+						<li>
+							INSERT INTO TIENDA VALUES (null,NombreTienda,Pais,Estado,Colonia,Contraseña,Encargado)
+						</li>
+					</ul>
+				</div>
 			</div>
-		</form>
+
+			<div class="sentenciaSql" id="btnSql">
+				<span>SQL</span>
+			</div>
+		<pie></pie>
 	</div>
-
-	 <div class="tgSQLNone" id="mostrarSql">
-      <div>
-        <label>Sentencias SQL</label>
-        <ul>
-      	 	<li>
-						 INSERT INTO TIENDA VALUES (null,NombreTienda,Pais,Estado,Colonia,Contraseña,Encargado)
-					 </li>
-        </ul>
-      </div>
-  	</div>
-
-    <div class="sentenciaSql" id="btnSql">
-      <span>SQL</span>
-    </div>
-	
-
-	<footer class="footer">
-		<ul>
-			<li><a href="#" class="icon-google"></a><label>Google</label></li>
-			<li><a href="#" class="icon-facebook2"></a><label>Facebook</label></li>
-			<li><a href="#" class="icon-twitter"></a><label>twitter</label></li>
-		</ul>
-	</footer>
 
 	<script src="../Scripts/jquery-3.3.1.js"></script>
 	<script src="../Scripts/jquery.validate.js"></script>
 	<script src="../Scripts/Registro-script.js"></script>
-    <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
+	<script type="text/javascript" src="../Scripts/vue.js"></script>
+  <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
 </body>
 </html>

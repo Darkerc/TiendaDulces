@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2019 a las 05:35:29
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 08-05-2019 a las 02:04:11
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,7 +69,10 @@ INSERT INTO `facturas` (`FolioFactura`, `CodigoProducto`, `NumProveedor`, `Tiend
 (7, 9, 1, 1, '2019-03-29 21:22:15', 0),
 (8, 10, 1, 1, '2019-03-29 21:52:23', 5),
 (9, 3, 1, 1, '2019-03-30 22:59:56', 9),
-(10, 14, 3, 1, '2019-03-30 23:00:21', 7);
+(10, 14, 3, 1, '2019-03-30 23:00:21', 7),
+(11, 14, 1, 3, '2019-05-07 16:54:15', 50),
+(12, 1, 1, 3, '2019-05-07 17:08:00', 100),
+(13, 1, 2, 3, '2019-05-07 18:36:07', 10);
 
 -- --------------------------------------------------------
 
@@ -93,9 +96,6 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`CodigoProducto`, `TiendaDueña`, `NombreProducto`, `Precio`, `Existencias`, `ImagenProducto`) VALUES
 (1, 1, 'Choco KitKat', 30, 200, 'kitkat2.png'),
 (2, 2, 'Obleas', 30, 500, 'oblea3.jpg'),
-(3, 3, 'Helado Cremosito', 20, 300, 'helado2.jpg'),
-(4, 3, 'Pan dulcesito', 15, 150, 'pan1.jpg'),
-(5, 3, 'Helado Chocosabroso', 50, 300, 'helaado1.jpg'),
 (6, 3, 'ChocoLoco', 500, 10, 'chocolate1.jpg'),
 (7, 3, 'Bombones Valentin', 30, 50, 'bombones1.jpg'),
 (8, 3, 'Bombones Convencionales', 2, 2000, 'bombones2.jpg'),
@@ -146,7 +146,7 @@ CREATE TABLE `tienda` (
   `Pais` varchar(20) DEFAULT 'Desconocida',
   `Estado` varchar(20) DEFAULT 'Desconocida',
   `Colonia` varchar(20) DEFAULT 'Desconocida',
-  `Contraseña` varchar(200) DEFAULT NULL,
+  `Contrasegna` varchar(200) DEFAULT NULL,
   `Encargado` varchar(45) DEFAULT 'Desconocida'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -154,7 +154,7 @@ CREATE TABLE `tienda` (
 -- Volcado de datos para la tabla `tienda`
 --
 
-INSERT INTO `tienda` (`idTienda`, `NombreTienda`, `Pais`, `Estado`, `Colonia`, `Contraseña`, `Encargado`) VALUES
+INSERT INTO `tienda` (`idTienda`, `NombreTienda`, `Pais`, `Estado`, `Colonia`, `Contrasegna`, `Encargado`) VALUES
 (1, 'Hamburguesas Leos', 'Mexico', 'Tabasco', 'Indeco', '$2y$12$vNjghxx/.NQ12wo5e1n1f.7WC3hBYrOqx2xl3rZzBFCgavGp74Hhu', 'Chuchin'),
 (2, 'Quesadillas Garcia', 'Mexico', 'Tabasco', 'Gaviotas', '$2y$12$w/ruikdGIJQScm0e3Vm1HeQMgPnJf9hGJj1yL7RJ27Eeh/H2ZKVcm', 'Dio'),
 (3, 'Dulceria LOL', 'Colombia', 'colombiano', 'Huachicol', '$2y$12$dK/295QWj4DAmLZt8/t58OVUBOlFK/SWfPr.YXFId39FtGI/WYPtq', 'Chuchin');
@@ -174,9 +174,8 @@ ALTER TABLE `empresasenvios`
 --
 ALTER TABLE `facturas`
   ADD PRIMARY KEY (`FolioFactura`),
-  ADD KEY `Productos_idx` (`CodigoProducto`),
-  ADD KEY `Proveedores_idx` (`NumProveedor`),
-  ADD KEY `Tienda_idx` (`TiendaFacturada`);
+  ADD KEY `Proveedor` (`NumProveedor`),
+  ADD KEY `TiendaCompra` (`TiendaFacturada`);
 
 --
 -- Indices de la tabla `productos`
@@ -206,7 +205,7 @@ ALTER TABLE `tienda`
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `FolioFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `FolioFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`

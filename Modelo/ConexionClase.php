@@ -60,6 +60,7 @@
 
 		}
 
+		//Forma datos si es true devuelve los datos columna por columna y si es false los va devolviendo por fila
 		//Devuelve un array de todos los datos de la tabla, se debe indicar forma en que se hara y si seran todos a la vez o separado
 		public function datosTodos($tabla,$manejoDeDatos,$formaDatos){
 
@@ -101,6 +102,7 @@
 		}
 		
 		//Se debe señalar la sentencia sql directamente, en esta no se realiza con CP (Consulta preparada)
+		//Forma datos si es true devuelve los datos columna por columna y si es false los va devolviendo por fila
 		public function datosTodosSCP($sql,$manejoDeDatos,$formaDatos){
 
 			try{
@@ -212,6 +214,7 @@
 			return $this->conexion;
 		}
 		
+		//Forma datos si es true devuelve los datos columna por columna y si es false los va devolviendo por fila
 		//Recibe un array asociativo que es el que le indica cuales son los criterios de la sentencia sql a crear, devuelve un array asociativo que son los resultados encontrados
 		public function datosSeleccionados($tabla,$arrayCriterios,$manejoDeDatos,$formaDatos){
 			

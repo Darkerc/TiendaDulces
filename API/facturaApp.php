@@ -1,21 +1,12 @@
 <?php
-use Dompdf\Exception;
-
-require_once("../Modelo/VerificarSesion.php");
 
 	require_once("../Modelo/VerFactura-Modelo.php");
 
-	require_once("dompdf/autoload.inc.php");
+	require_once("../Controlador/dompdf/autoload.inc.php");
 	
-	$datosFactura=new VerFactura();
-
-	$idTienda;
-
-	if(empty($_GET['tiendaID'])){
-		$idTienda=$_SESSION['TIENDA'];
-	}else{
-		$idTienda=$_GET['tiendaID'];
-	}
+    $datosFactura=new VerFactura();
+    
+    $idTienda=$_GET['tiendaID'];
 
 	$datosTiendaYFactura=$datosFactura->datosFacturaYTienda($idTienda);
 
@@ -28,6 +19,7 @@ require_once("../Modelo/VerificarSesion.php");
 	$nombreProducto=$datosFactura->rutaImagen($idTienda)['NombreProducto'];
 	
 	//require_once("../Vista/CreaFactura.php");
+	
 	use Dompdf\Dompdf;
 	
 	//instacia de dompedf
@@ -99,7 +91,7 @@ EOT;
 	
 	//Salida del pdf
 	$creaPDF->stream("Factura",array("Attachment" => 0));
-
+	
 
 ?>
 

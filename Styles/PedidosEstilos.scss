@@ -1,6 +1,6 @@
 ﻿.productoPedido {
     display: flex;
-    margin: 50px auto 50px auto;
+    margin: 50px auto 0 auto;
     background-color: rgba(#2339bf,0.75);
     width: 85%;
     padding: 60px 20px;
@@ -28,6 +28,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        position: relative;
 
         label {
             display: block;
@@ -132,4 +133,22 @@
             }
         }
     }
+}
+
+label.noAdmitido,label.admitido{
+    text-align: center;
+    display: block;
+    background-color: rgba(#2339bf,0.75);
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+label.noAdmitido{
+    color: #f11717;
+}
+
+label.admitido{
+    color: #17dd42;
 }

@@ -9,9 +9,17 @@
     font-size: 30px;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+
+    div#app{
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+
 }
 
 .contenedorPrincipal {

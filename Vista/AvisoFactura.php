@@ -13,42 +13,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<nav class="navegacionPrincipal">
-      <ul>
-        <li>
-          <a href="../Controlador/Comprar-Controlador.php">Comprar</a>
-        </li>
-        <li>
-          <a href="../Controlador/Productos-Controlador.php">Productos</a>
-        </li>
-		<li>
-          <a href="../Controlador/CreaProducto-Controlador.php">Crear Producto</a>
-        </li>
-        <li>
-          <a href="../Modelo/CerrarSession.php">Cerrar Session</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="contenedorPrincipal">
-        <div class="avisoFactura">
-            <label>
-                Pedido realizado: factura generada
-            </label>
-            <a href="../Controlador/VerFactura-Controlador.php" target="_blank">
-                imprimir factura
-            </a>
+  <div id="app">
+        <navegacion></navegacion>
+        <div class="contenedorPrincipal">
+            <div class="avisoFactura">
+                <label>
+                    Pedido realizado: factura generada
+                </label>
+                <a href="../Controlador/VerFactura-Controlador.php" target="_blank">
+                    imprimir factura
+                </a>
+            </div>
         </div>
-    </div>
-    
-    <footer class="footer">
-		<ul>
-			<li><a href="#" class="icon-google"></a><label>Google</label></li>
-			<li><a href="#" class="icon-facebook2"></a><label>Facebook</label></li>
-			<li><a href="#" class="icon-twitter"></a><label>twitter</label></li>
-		</ul>
-	</footer>
 
+        <div class="tgSQLNone" id="mostrarSql">
+          <div>
+            <label>Sentencias SQL</label>
+            <ul>
+              <li>SELECT * FROM facturas,tienda WHERE FechaCompra = (SELECT MAX(FechaCompra) From facturas) and idTienda = TiendaFacturada</li>
+              <li>SELECT day(FechaCompra) as dia, month(FechaCompra) as mes, year(FechaCompra) as año FROM facturas,tienda WHERE FechaCompra = (SELECT MAX(FechaCompra) From facturas) and  idTienda = TiendaFacturada</li>
+              <li>SELECT * FROM facturas,proveedores,empresasenvios WHERE FechaCompra = (SELECT MAX(FechaCompra) From facturas) and facturas.NumProveedor = proveedores.NumProveedor and EmpresaPerteneciente = CodigoEmpresa</li>
+              <li>SELECT ImagenProducto,NombreProducto FROM productos,facturas WHERE FechaCompra = (SELECT MAX(FechaCompra) FROM facturas) and facturas.CodigoProducto = productos.CodigoProducto</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sentenciaSql" id="btnSql">
+          <span>SQL</span>
+        </div>
+        <pie></pie>
+  </div>
+  <script src="../Scripts/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="../Scripts/vue.js"></script>
+  <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
 
 </body>
 </html>

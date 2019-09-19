@@ -17,7 +17,7 @@
 			header("location:../Index.php");
 		}
 			
-		if($datosTienda['NombreTienda']==$NombreTienda && password_verify($contrasena,$datosTienda['Contraseña'])){
+		if($datosTienda['NombreTienda']==$NombreTienda && password_verify($contrasena,$datosTienda['Contrasegna'])){
 				
 			session_start();
 			$_SESSION['TIENDA']=$datosTienda['idTienda'];

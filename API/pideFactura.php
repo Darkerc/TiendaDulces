@@ -1,33 +1,27 @@
 <?php
-use Dompdf\Exception;
-
-require_once("../Modelo/VerificarSesion.php");
 
 	require_once("../Modelo/VerFactura-Modelo.php");
 
-	require_once("dompdf/autoload.inc.php");
+	require_once("../Controlador/dompdf/autoload.inc.php");
 	
-	$datosFactura=new VerFactura();
+    $datosFactura=new VerFactura();
+    
+    $idTienda=$_GET['tiendaID'];
 
-	$idTienda;
+    $FolioFactura=$_GET['FolioFac'];
 
-	if(empty($_GET['tiendaID'])){
-		$idTienda=$_SESSION['TIENDA'];
-	}else{
-		$idTienda=$_GET['tiendaID'];
-	}
+	$datosTiendaYFactura=$datosFactura->datosFacturaYTienda($idTienda,$FolioFactura);
 
-	$datosTiendaYFactura=$datosFactura->datosFacturaYTienda($idTienda);
+	$fechasFactura=$datosFactura->datosFechaFactura($idTienda,$FolioFactura);
 
-	$fechasFactura=$datosFactura->datosFechaFactura($idTienda);
+	$datosProvEmpresa=$datosFactura->datosProveedorEmpresa($idTienda,$FolioFactura);
 
-	$datosProvEmpresa=$datosFactura->datosProveedorEmpresa($idTienda);
+	$imagen=$datosFactura->rutaImagen($idTienda,$FolioFactura)['ImagenProducto'];
 
-	$imagen=$datosFactura->rutaImagen($idTienda)['ImagenProducto'];
-
-	$nombreProducto=$datosFactura->rutaImagen($idTienda)['NombreProducto'];
+	$nombreProducto=$datosFactura->rutaImagen($idTienda,$FolioFactura)['NombreProducto'];
 	
 	//require_once("../Vista/CreaFactura.php");
+	
 	use Dompdf\Dompdf;
 	
 	//instacia de dompedf
@@ -100,6 +94,4 @@ EOT;
 	//Salida del pdf
 	$creaPDF->stream("Factura",array("Attachment" => 0));
 
-
 ?>
-

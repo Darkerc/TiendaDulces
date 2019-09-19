@@ -7,91 +7,60 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <nav class="navegacionPrincipal">
-      <ul>
-        <li>
-          <a href="../Controlador/Comprar-Controlador.php">Comprar</a>
-        </li>
-        <li>
-          <a href="../Controlador/Productos-Controlador.php">Productos</a>
-        </li>
-		<li>
-          <a href="../Controlador/CreaProducto-Controlador.php">Crear Producto</a>
-        </li>
-        <li>
-          <a href="../Modelo/CerrarSession.php">Cerrar Session</a>
-        </li>
-		
-      </ul>
-    </nav>
-	  
-	  <div class="contenedorPrincipal">
-	  	<form class="creaProducto" enctype="multipart/form-data" action="../Modelo/AñadirProducto.php" method="post" id="enviaProducto" name="enviaProducto">
+    <div id="app">
+      <navegacion></navegacion>
+      <div class="contenedorPrincipal">
+        <form class="creaProducto" enctype="multipart/form-data" action="../Modelo/AñadirProducto.php" method="post" id="enviaProducto" name="enviaProducto">
 
-	  		<label for="NombreProducto" class="input">Nombre del producto: </label>
-	  		<input type="text" name="NombreProducto" id="NombreProducto" class="input">
- 
-	  		<label for="Precio" class="input">Precio: </label>
-	  		<input type="text" name="Precio" id="Precio" class="input">
+          <label for="NombreProducto" class="input">Nombre del producto: </label>
+          <input type="text" name="NombreProducto" id="NombreProducto" class="input">
+  
+          <label for="Precio" class="input">Precio: </label>
+          <input type="text" name="Precio" id="Precio" class="input">
 
-	  		<label for="Existencias" class="input">Existencias: </label>
-	  		<input type="text" name="Existencias" id="Existencias" class="input">
+          <label for="Existencias" class="input">Existencias: </label>
+          <input type="text" name="Existencias" id="Existencias" class="input">
 
-	  		<div>
-	  			<label for="ImagenProducto" class="input">Subir imagen: </label>
-	  			<label class="nombre" id="NombreImagen" name="NombreImagen">Imagen Producto</label>
-	  		</div>
-			
-	  		<div class="contImagen">
-	  			<div>
-	  				<div>
-	  					<input type="file" name="ImagenProducto" id="ImagenProducto" class="input-file">
-	  					<span>Insertar Imagen</span>
-	  				</div>
-	  			</div>
-	  			<img src="../Resources/png/017-sensible.png" name="visualizaImagen" id="visualizaImagen">
-	  		</div>
-	  		
-	  		<input type="submit" value="Subir Producto" class="submit">
+          <div>
+            <label for="ImagenProducto" class="input">Subir imagen: </label>
+            <label class="nombre" id="NombreImagen" name="NombreImagen">Imagen Producto</label>
+          </div>
+        
+          <div class="contImagen">
+            <div>
+              <div>
+                <input type="file" name="ImagenProducto" id="ImagenProducto" class="input-file">
+                <span>Insertar Imagen</span>
+              </div>
+            </div>
+            <img src="../Resources/png/017-sensible.png" name="visualizaImagen" id="visualizaImagen">
+          </div>
+          
+          <input type="submit" value="Subir Producto" class="submit">
 
-	  	</form>
-    </div>
-    
-    <div class="tgSQLNone" id="mostrarSql">
-      <div>
-        <label>Sentencias SQL</label>
-        <ul>
-      	 	<li>Insert Into Productos values (null,TiendaDueña,NombreProducto,Precio,Existencias,ImagenProducto)</li>
-        </ul>
+        </form>
       </div>
-  	</div>
+      
+      <div class="tgSQLNone" id="mostrarSql">
+        <div>
+          <label>Sentencias SQL</label>
+          <ul>
+            <li>Insert Into Productos values (null,TiendaDueña,NombreProducto,Precio,Existencias,ImagenProducto)</li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="sentenciaSql" id="btnSql">
-      <span>SQL</span>
+      <div class="sentenciaSql" id="btnSql">
+        <span>SQL</span>
+      </div>     
+      <pie></pie>
     </div>
-
-	  
-	   <footer class="footer">
-      <ul>
-        <li>
-          <a href="#" class="icon-google"></a>
-          <label>Google</label>
-        </li>
-        <li>
-          <a href="#" class="icon-facebook2"></a>
-          <label>Facebook</label>
-        </li>
-        <li>
-          <a href="#" class="icon-twitter"></a>
-          <label>twitter</label>
-        </li>
-      </ul>
-    </footer>
 
     <script type="text/javascript" src="../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../Scripts/vue.js"></script>
     <script type="text/javascript" src="../Scripts/JSGeneral.js"></script>
-	  <script type="text/javascript" src="../Scripts/jquery.validate.js"></script>
-	<script type="text/javascript" src="../Scripts/CreaProducto-script.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validate.js"></script>
+  	<script type="text/javascript" src="../Scripts/CreaProducto-script.js"></script>
 
 <body>
 </body>

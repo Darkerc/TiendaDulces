@@ -1,0 +1,60 @@
+[
+{"type":"header","version":"4.8.5","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"bbddfacturas"},
+{"type":"table","name":"empresasenvios","database":"bbddfacturas","data":
+[
+{"CodigoEmpresa":"123DHL123","NombreEmpresa":"DHL"},
+{"CodigoEmpresa":"456FEDEX456","NombreEmpresa":"FEDEX"},
+{"CodigoEmpresa":"789EnviosRolon789","NombreEmpresa":"EnviosRolon"}
+]
+}
+,{"type":"table","name":"facturas","database":"bbddfacturas","data":
+[
+{"FolioFactura":"3","CodigoProducto":"1","NumProveedor":"1","TiendaFacturada":"1","FechaCompra":"2019-03-29 20:23:07","CantidadProducto":"5"},
+{"FolioFactura":"4","CodigoProducto":"1","NumProveedor":"1","TiendaFacturada":"1","FechaCompra":"2019-03-29 20:27:52","CantidadProducto":"15"},
+{"FolioFactura":"5","CodigoProducto":"16","NumProveedor":"1","TiendaFacturada":"3","FechaCompra":"2019-03-29 20:59:12","CantidadProducto":"5"},
+{"FolioFactura":"6","CodigoProducto":"6","NumProveedor":"1","TiendaFacturada":"3","FechaCompra":"2019-03-29 21:00:04","CantidadProducto":"10"},
+{"FolioFactura":"7","CodigoProducto":"9","NumProveedor":"1","TiendaFacturada":"1","FechaCompra":"2019-03-29 21:22:15","CantidadProducto":"0"},
+{"FolioFactura":"8","CodigoProducto":"10","NumProveedor":"1","TiendaFacturada":"1","FechaCompra":"2019-03-29 21:52:23","CantidadProducto":"5"},
+{"FolioFactura":"9","CodigoProducto":"3","NumProveedor":"1","TiendaFacturada":"1","FechaCompra":"2019-03-30 22:59:56","CantidadProducto":"9"},
+{"FolioFactura":"10","CodigoProducto":"14","NumProveedor":"3","TiendaFacturada":"1","FechaCompra":"2019-03-30 23:00:21","CantidadProducto":"7"},
+{"FolioFactura":"11","CodigoProducto":"14","NumProveedor":"1","TiendaFacturada":"3","FechaCompra":"2019-05-07 16:54:15","CantidadProducto":"50"},
+{"FolioFactura":"12","CodigoProducto":"1","NumProveedor":"1","TiendaFacturada":"3","FechaCompra":"2019-05-07 17:08:00","CantidadProducto":"100"},
+{"FolioFactura":"13","CodigoProducto":"1","NumProveedor":"2","TiendaFacturada":"3","FechaCompra":"2019-05-07 18:36:07","CantidadProducto":"10"}
+]
+}
+,{"type":"table","name":"productos","database":"bbddfacturas","data":
+[
+{"CodigoProducto":"1","TiendaDueña":"1","NombreProducto":"Choco KitKat","Precio":"30","Existencias":"200","ImagenProducto":"kitkat2.png"},
+{"CodigoProducto":"2","TiendaDueña":"2","NombreProducto":"Obleas","Precio":"30","Existencias":"500","ImagenProducto":"oblea3.jpg"},
+{"CodigoProducto":"6","TiendaDueña":"3","NombreProducto":"ChocoLoco","Precio":"500","Existencias":"10","ImagenProducto":"chocolate1.jpg"},
+{"CodigoProducto":"7","TiendaDueña":"3","NombreProducto":"Bombones Valentin","Precio":"30","Existencias":"50","ImagenProducto":"bombones1.jpg"},
+{"CodigoProducto":"8","TiendaDueña":"3","NombreProducto":"Bombones Convencionales","Precio":"2","Existencias":"2000","ImagenProducto":"bombones2.jpg"},
+{"CodigoProducto":"9","TiendaDueña":"3","NombreProducto":"Oblea de cajeta","Precio":"5","Existencias":"800","ImagenProducto":"oblea2.jpg"},
+{"CodigoProducto":"10","TiendaDueña":"3","NombreProducto":"Galletas Finas","Precio":"30","Existencias":"400","ImagenProducto":"galletas3.jpg"},
+{"CodigoProducto":"11","TiendaDueña":"3","NombreProducto":"Cacahuates Chinos","Precio":"30","Existencias":"255","ImagenProducto":"cacahuate3.jpg"},
+{"CodigoProducto":"12","TiendaDueña":"3","NombreProducto":"Cacahuates Naturales","Precio":"20","Existencias":"600","ImagenProducto":"cacahuate2.jpg"},
+{"CodigoProducto":"13","TiendaDueña":"3","NombreProducto":"Galletas Navide&ntilde;as","Precio":"100","Existencias":"20","ImagenProducto":"galletas1.jpg"},
+{"CodigoProducto":"14","TiendaDueña":"3","NombreProducto":"Bombones Naturales","Precio":"10","Existencias":"300","ImagenProducto":"remedio-con-bombones-para-dolor-de-garganta.jpg"},
+{"CodigoProducto":"15","TiendaDueña":"3","NombreProducto":"ChocoGalletas","Precio":"15","Existencias":"300","ImagenProducto":"galletas2.png"},
+{"CodigoProducto":"16","TiendaDueña":"3","NombreProducto":"Obleas de colores","Precio":"2","Existencias":"500","ImagenProducto":"Mexican-Candy-Obleas-Medianas__43488.1467651587.1280.1280.jpg"},
+{"CodigoProducto":"17","TiendaDueña":"1","NombreProducto":"Helados Malvavisco","Precio":"5","Existencias":"100","ImagenProducto":"HeladosMalvavisco.jpeg"},
+{"CodigoProducto":"18","TiendaDueña":"3","NombreProducto":"Pizza Dulce","Precio":"30","Existencias":"200","ImagenProducto":"PizzaDulce.jpg"},
+{"CodigoProducto":"19","TiendaDueña":"1","NombreProducto":"Ositos de goma","Precio":"15","Existencias":"500","ImagenProducto":"OsitosGoma.jpg"}
+]
+}
+,{"type":"table","name":"proveedores","database":"bbddfacturas","data":
+[
+{"NumProveedor":"1","Nombre":"LaNayanci","EmpresaPerteneciente":"789EnviosRolon789","PrimerApellido":"Garcia","SegundoApellido":"Rodriguez"},
+{"NumProveedor":"2","Nombre":"Leo","EmpresaPerteneciente":"789EnviosRolon789","PrimerApellido":"Rodriguez","SegundoApellido":"Rolon"},
+{"NumProveedor":"3","Nombre":"Chuchito","EmpresaPerteneciente":"123DHL123","PrimerApellido":"De la Cruz","SegundoApellido":"De Dios"}
+]
+}
+,{"type":"table","name":"tienda","database":"bbddfacturas","data":
+[
+{"idTienda":"1","NombreTienda":"Hamburguesas Leos","Pais":"Mexico","Estado":"Tabasco","Colonia":"Indeco","Contrasegna":"$2y$12$vNjghxx\/.NQ12wo5e1n1f.7WC3hBYrOqx2xl3rZzBFCgavGp74Hhu","Encargado":"Chuchin"},
+{"idTienda":"2","NombreTienda":"Quesadillas Garcia","Pais":"Mexico","Estado":"Tabasco","Colonia":"Gaviotas","Contrasegna":"$2y$12$w\/ruikdGIJQScm0e3Vm1HeQMgPnJf9hGJj1yL7RJ27Eeh\/H2ZKVcm","Encargado":"Dio"},
+{"idTienda":"3","NombreTienda":"Dulceria LOL","Pais":"Colombia","Estado":"colombiano","Colonia":"Huachicol","Contrasegna":"$2y$12$dK\/295QWj4DAmLZt8\/t58OVUBOlFK\/SWfPr.YXFId39FtGI\/WYPtq","Encargado":"Chuchin"}
+]
+}
+]

@@ -9,6 +9,9 @@ body {
   font-size: 30px;
   margin: 0;
   padding: 0;
+}
+
+body div#app {
   overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,6 +20,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .contenedorPrincipal {
